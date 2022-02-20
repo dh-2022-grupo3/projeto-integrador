@@ -2,6 +2,10 @@ header {
   display: flex;
   align-items: center;
   gap: 20px;
+
+  margin-bottom: 20px;
+
+  border-bottom: 1px solid black;
 }
 
 #spacer {
@@ -11,5 +15,72 @@ header {
 #vertical-line {
   height: 1.5rem;
 
+  border: 1px solid black;
+}
+
+main {
+  height: 100%;
+  margin: 0 20px 20px 20px;
+
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+#left-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+#left-section .card:first-child {
+  flex-grow: 1;
+
+  position: relative;
+}
+
+#left-section .card:first-child div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  border-top: 1px solid black;
+}
+
+#left-section .card:last-child {
+  flex-grow: 2;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#left-section .bank-info{
+flex-grow: 1;
+
+  border-top: 1px solid black;
+}
+
+#right-section {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#top-right-section {
+  display: flex;
+}
+
+#bottom-right-section {
+  flex-grow: 1;
+}
+
+#bottom-right-section .card {
+  height: 100%;
+}
+
+.card {
   border: 1px solid black;
 }
