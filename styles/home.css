@@ -1,12 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--primary-spacing);
 
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: var(--primary-spacing-half);
 
-  background: rgb(170, 170, 170);
+  background: #aaaaaa;
   border-bottom: 1px solid black;
 }
 
@@ -22,18 +26,19 @@ header {
 
 main {
   height: 100%;
-  margin: 0 20px 20px 20px;
+  padding: var(--primary-spacing);
 
   display: flex;
   align-items: stretch;
-  gap: 20px;
+  gap: var(--primary-spacing);
+
+  background: #dddddd;
 }
 
 #left-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  
+  gap: var(--primary-spacing);
 }
 
 #left-section .card:first-child {
@@ -44,6 +49,7 @@ main {
 
 #left-section .card:first-child div {
   position: absolute;
+  left: 0;
   bottom: 0;
   width: 100%;
 
@@ -57,8 +63,8 @@ main {
   flex-direction: column;
 }
 
-#left-section .bank-info{
-flex-grow: 1;
+#left-section .bank-info {
+  flex-grow: 1;
 
   border-top: 1px solid black;
 }
@@ -68,11 +74,18 @@ flex-grow: 1;
 
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--primary-spacing);
 }
 
 #top-right-section {
-  display: flex;
+flex-grow: 1;
+
+  display: flex;  
+  gap: var(--primary-spacing);
+}
+
+#top-right-section .card {
+  flex-grow: 1;
 }
 
 #bottom-right-section {
@@ -84,5 +97,8 @@ flex-grow: 1;
 }
 
 .card {
+  padding: var(--primary-spacing-half);
+
   border: 1px solid black;
+  background: white;
 }

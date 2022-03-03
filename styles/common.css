@@ -2,14 +2,9 @@
   box-sizing: border-box;
 }
 
-html {
-  height: 100%;
-}
-
+html,
 body {
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 body,
