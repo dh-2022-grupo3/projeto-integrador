@@ -1,0 +1,55 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: var(--primary-spacing);
+
+  padding: var(--primary-spacing-half);
+
+  background: #aaaaaa;
+  border-bottom: 1px solid black;
+}
+
+#spacer {
+  flex-grow: 1;
+}
+
+#vertical-line {
+  height: 1.5rem;
+
+  border: 1px solid black;
+}
+
+main {
+  height: 100%;
+  padding: var(--primary-spacing);
+
+  display: flex;
+  align-items: stretch;
+  gap: var(--primary-spacing);
+
+  background: #dddddd;
+}
+
+#menuLeft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--primary-spacing);
+}
+
+#menuLeft .option:first-child {
+  flex-grow: 1;
+
+  position: relative;
+}
+
+.card {
+  padding: var(--primary-spacing-half);
+
+  border: 1px solid black;
+  background: white;
+}
