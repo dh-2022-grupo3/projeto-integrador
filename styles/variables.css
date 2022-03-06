@@ -3,6 +3,7 @@
 :root {
   --primary-spacing: 20px;
   --primary-spacing-half: calc(var(--primary-spacing) / 2);
+  --primary-spacing-quarter: calc(var(--primary-spacing) / 4);
 
   --font-family: 'Roboto', sans-serif;
   --font-headline-1: 300 96px var(--font-family);
@@ -19,27 +20,19 @@
   --font-caption: 400 12px var(--font-family);
   --font-overline: 400 10px var(--font-family);
 
-  --color-primary-50: #e2f1f1;
-  --color-primary-100: #b7dcdb;
-  --color-primary-200: #8ac6c4;
-  --color-primary-300: #61b0ab;
-  --color-primary-400: #499f99;
-  --color-primary-500: #3d8e87;
-  --color-primary-600: #39817a;
-  --color-primary-700: #34726a;
-  --color-primary-800: #30625b;
-  --color-primary-900: #254640;
-  --color-primary: var(--color-primary-400);
+  /* https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=499f99&secondary.color=9f494f */
 
-  --color-complementary-50: #f8e6e8;
-  --color-complementary-100: #efbfc6;
-  --color-complementary-200: #e499a2;
-  --color-complementary-300: #d87680;
-  --color-complementary-400: #cd6269;
-  --color-complementary-500: #c45556;
-  --color-complementary-600: #b44f53;
-  --color-complementary-700: #9f494f;
-  --color-complementary-800: #8a434b;
-  --color-complementary-900: #633a41;
-  --color-complementary: var(--color-complementary-700);
+  --color-primary: #499f99;
+  --color-primary-dark: #09706b;
+  --color-primary-light: #7bd0ca;
+  --color-font-p: #000;
+  --color-font-p-d: #fff;
+  --color-font-p-l: #000;
+
+  --color-secondary: #9f494f;
+  --color-secondary-dark: #6d1c27;
+  --color-secondary-light: #d3777b;
+  --color-font-s: #fff;
+  --color-font-s-d: #fff;
+  --color-font-s-l: #000;
 }
