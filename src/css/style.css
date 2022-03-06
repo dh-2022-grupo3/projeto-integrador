@@ -70,10 +70,7 @@ margin: 0 20px;
     margin-block: 30px;
 }
 
-.segunda-coluna .imagem{
-    width: auto;
-    height: 90px;
+#main-logo {
+    font-size: 90px;
 }
-
-
 
