@@ -27,19 +27,19 @@ header {
 
 main {
   height: 100%;
-  padding: var(--primary-spacing);
+  padding: var(--spacing);
 
   display: flex;
   align-items: stretch;
-  gap: var(--primary-spacing);
+  gap: var(--spacing);
 
-  background: #dddddd;
+  background: var(--color-primary-light);
 }
 
 #menuLeft {
   display: flex;
   flex-direction: column;
-  gap: var(--primary-spacing);
+  gap: var(--spacing);
 }
 
 #menuLeft .option:first-child {
@@ -49,8 +49,12 @@ main {
 }
 
 .card {
-  padding: var(--primary-spacing-half);
+  padding: var(--spacing-half);
 
   border: 1px solid black;
   background: white;
+}
+
+form {
+  margin-bottom: var(--spacing);
 }
