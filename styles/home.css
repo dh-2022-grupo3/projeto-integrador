@@ -6,12 +6,12 @@ body {
 header {
   display: flex;
   align-items: center;
-  gap: var(--primary-spacing);
+  gap: var(--spacing);
 
-  padding: var(--primary-spacing-half);
+  padding: var(--spacing-half);
 
   background: var(--color-primary-dark);
-  color: var(--color-font-p-d);
+  color: var(--color-font-primary-dark);
   border-bottom: 1px solid;
 }
 
@@ -27,11 +27,11 @@ header {
 
 main {
   height: 100%;
-  padding: var(--primary-spacing);
+  padding: var(--spacing);
 
   display: flex;
   align-items: stretch;
-  gap: var(--primary-spacing);
+  gap: var(--spacing);
 
   background: var(--color-primary-light);
 }
@@ -39,7 +39,7 @@ main {
 #left-section {
   display: flex;
   flex-direction: column;
-  gap: var(--primary-spacing);
+  gap: var(--spacing);
 }
 
 #left-section .card:first-child {
@@ -49,13 +49,13 @@ main {
 }
 
 #left-section .card:first-child div:first-child {
-  padding: var(--primary-spacing);
+  padding: var(--spacing);
 }
 
 
 #left-section .card:first-child div.card-title {
   width: 100%;
-  padding: var(--primary-spacing-half);
+  padding: var(--spacing-half);
 
   text-align: center;
 }
@@ -68,7 +68,7 @@ main {
 }
 
 #left-section .card:last-child span.card-title {
-  padding: var(--primary-spacing-half);
+  padding: var(--spacing-half);
 }
 
 #right-section {
@@ -76,7 +76,7 @@ main {
 
   display: flex;
   flex-direction: column;
-  gap: var(--primary-spacing);
+  gap: var(--spacing);
 }
 
 #right-section .card{
@@ -85,16 +85,16 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--primary-spacing-quarter);
+  gap: var(--spacing-quarter);
 
-  padding: var(--primary-spacing);
+  padding: var(--spacing);
 }
 
 #top-right-section {
   flex-grow: 1;
 
   display: flex;
-  gap: var(--primary-spacing);
+  gap: var(--spacing);
 }
 
 #top-right-section .overline {
