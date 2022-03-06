@@ -6,12 +6,13 @@ body {
 header {
   display: flex;
   align-items: center;
-  gap: var(--primary-spacing);
+  gap: var(--spacing);
 
-  padding: var(--primary-spacing-half);
+  padding: var(--spacing-half);
 
-  background: #aaaaaa;
-  border-bottom: 1px solid black;
+  background: var(--color-primary-dark);
+  color: var(--color-font-primary-dark);
+  border-bottom: 1px solid;
 }
 
 #spacer {
@@ -21,7 +22,7 @@ header {
 #vertical-line {
   height: 1.5rem;
 
-  border: 1px solid black;
+  border: 1px solid;
 }
 
 main {
