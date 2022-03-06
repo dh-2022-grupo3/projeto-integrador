@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/chart.css">
+
+    <title>Chart</title>
+</head>
+
+<body>
+    <main>
+        <aside>
+            <div class="container">
+                <div class="navigation">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <ion-icon name="laptop-outline"></ion-icon>
+                                </span>
+                                <span class="title">Name</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <ion-icon name="home-outline"></ion-icon>
+                                </span>
+                                <span class="title">Lorem ipsum</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <ion-icon name="chatbox-outline"></ion-icon>
+                                </span>
+                                <span class="title">Lorem ipsum</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <ion-icon name="cart-outline"></ion-icon>
+                                </span>
+                                <span class="title">Lorem ipsum</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <ion-icon name="calculator-outline"></ion-icon>
+                                </span>
+                                <span class="title">Lorem ipsum</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <ion-icon name="settings-outline"></ion-icon>
+                                </span>
+                                <span class="title">Lorem ipsum</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icon">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                </span>
+                                <span class="title">Lorem ipsum</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- main -->
+        <section>
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle">
+                        <ion-icon name="menu-outline"></ion-icon>
+                    </div>
+
+                    <div>
+                        <span>Lorem ipsum</span>
+                    </div>
+
+                    <!-- userImage -->
+                    <div class="user">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <!-- cards -->
+                <div class="cardBox">
+                    <div class="card">
+                        <div>
+                            <div class="numbers">123,45</div>
+                            <div class="cardName">Lorem ipsum</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="happy-outline"></ion-icon>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">R$ 123,45</div>
+                            <div class="cardName">Lorem ipsum</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="cash-outline"></ion-icon>
+                        </div>
+
+                    </div>
+                    <div class="card">
+                        <div>
+                            <div class="numbers">R$ 543,21</div>
+                            <div class="cardName">Lorem ipsum</div>
+                        </div>
+                        <div class="iconBx">
+                            <ion-icon name="wallet-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- charts -->
+                <div class="graphBox">
+
+                    <div class="box">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div class="box">
+                        <canvas id="verticalBar"></canvas>
+                    </div>
+                </div>
+
+                <div class="graphBoxTwo">
+                    <div class="boxTwo">
+                        <canvas id="line"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg .com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="../scripts/my_chart.js"></script>
+</body>
+
+</html>
