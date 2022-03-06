@@ -1,19 +1,46 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html,
 body {
+  font: var(--font-body-1);
   height: 100%;
 }
 
-body,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+  font: var(--font-headline-1);
+}
+
+h2 {
+  font: var(--font-headline-2);
+}
+
+h3 {
+  font: var(--font-headline-3);
+}
+
+h4 {
+  font: var(--font-headline-4);
+}
+
+h5 {
+  font: var(--font-headline-5);
+}
+
 h6 {
-  margin: 0;
+  font: var(--font-headline-6);
+}
+
+button {
+  font: var(--font-button);
+}
+
+figcaption,
+caption,
+label,
+legend {
+  font: var(--font-caption);
 }
