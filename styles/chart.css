@@ -7,7 +7,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 :root {
-    /* --green: green; */
     --white: #fff;
     --grey: #f5f5f5;
     --black1: #222;
@@ -28,13 +27,13 @@ body {
     width: 300px;
     height: 100%;
     background: var(--color-primary-dark);
-    border-left: 10px solid var var(--color-primary-dark);
+    /* border-left: 10px solid var(--color-primary); */
 }
 
 .navigation ul {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 10px;
     width: 100%;
 }
 
