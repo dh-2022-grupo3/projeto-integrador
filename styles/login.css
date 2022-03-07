@@ -1,7 +1,7 @@
 .login{
     width: 320px;
     height: 420px;
-    background: green;
+    background: var(--color-primary-dark);
     color: #fff;
     top: 50%;
     left: 50%;
@@ -41,7 +41,8 @@ h1{
     margin-bottom: 20px;
 }
 
-.login input[type="email"], input[type="password"]{
+.login input[type="email"], 
+.login input[type="password"]{
     
     border: none;
     border-bottom: 1px solid #fff;
@@ -56,7 +57,7 @@ h1{
     border: none;
     outline: none;
     height: 40px;
-    background: #66cdaa;
+    background: var(--color-secondary-light);
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
@@ -74,7 +75,7 @@ h1{
 
 .login input[type="submit"]:hover{
     cursor: pointer;
-    background: lightgreen;
+    background: var(--color-secondary);
     color: #000;
 
 }

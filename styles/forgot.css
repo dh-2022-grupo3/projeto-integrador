@@ -1,7 +1,7 @@
 .forgot{
     width: 320px;
     height: 320px;
-    background: green;
+    background: var(--color-primary-dark);
     color: #fff;
     top: 50%;
     left: 50%;
@@ -47,7 +47,7 @@ h1{
     border: none;
     outline: none;
     height: 35px;
-    background: #66cdaa;
+    background: var(--color-secondary-light);
     color: #fff;
     font-size: 12px;
     border-radius: 20px;
@@ -61,7 +61,7 @@ h1{
 
 .forgot input[type="submit"]:hover{
     cursor: pointer;
-    background: lightgreen;
+    background: var(--color-secondary);
     color: #000;
 
 }

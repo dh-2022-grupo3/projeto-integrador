@@ -7,7 +7,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 :root {
-    --green: green;
+    /* --green: green; */
     --white: #fff;
     --grey: #f5f5f5;
     --black1: #222;
@@ -27,8 +27,8 @@ body {
     position: fixed;
     width: 300px;
     height: 100%;
-    background: var(--green);
-    border-left: 10px solid var(--green);
+    background: var(--color-primary-dark);
+    border-left: 10px solid var var(--color-primary-dark);
 }
 
 .navigation ul {
@@ -61,7 +61,7 @@ body {
     display: flex;
 }
 .navigation ul li:hover a {
-    color: var(--green);
+    color: var(--color-primary-dark);
 }
 .navigation ul li a .icon {
     position: relative;
@@ -91,7 +91,7 @@ body {
     width: calc(100% - 300px);
     left: 300px;
     min-height: 100vh;
-    background: var(--white);
+    background: var(--color-primary-light);
     transition: 0.5s;
 }
 .topbar {
@@ -101,7 +101,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
-    background: var(--green);
+    background: var(--color-primary-dark);
     color: var(--white);
 }
 .toggle {
@@ -150,7 +150,7 @@ body {
     position: relative;
     font-size: 2.5em;
     font-weight: 400;
-    color: var(--green);
+    color: var(--color-primary-dark);
 }
 .cardBox .card .cardName {
     color: var(--black2);
@@ -162,7 +162,7 @@ body {
     color: var(--black2);
 }
 .cardBox .card:hover {
-    background: var(--green);
+    background: var(--color-primary-dark);
 }
 .cardBox .card:hover .numbers,
 .cardBox .card:hover .iconBx,
