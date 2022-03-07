@@ -1,6 +1,5 @@
 const ctx = document.getElementById('myChart').getContext('2d');
 const verticalBar = document.getElementById('verticalBar').getContext('2d');
-const line = document.getElementById('line').getContext('2d');
 
 const myChart = new Chart(ctx, {
     type: 'doughnut',
