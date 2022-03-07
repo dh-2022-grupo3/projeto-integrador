@@ -27,7 +27,6 @@ body {
     width: 300px;
     height: 100%;
     background: var(--color-primary-dark);
-    /* border-left: 10px solid var(--color-primary); */
 }
 
 .navigation ul {
