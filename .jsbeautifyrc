@@ -1,0 +1,12 @@
+{
+  "end_with_newline": true,
+  "eol": "\n",
+  "indent_char": " ",
+  "indent_empty_lines": false,
+  "indent_size": 2,
+  "indent_with_tabs": false,
+  "newline_between_rules": true,
+  "preserve_newlines": false,
+  "selector_separator_newline": false,
+  "space_around_combinator": false
+}

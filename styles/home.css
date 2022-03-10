@@ -7,9 +7,7 @@ header {
   display: flex;
   align-items: center;
   gap: var(--spacing);
-
   padding: var(--spacing-half);
-
   background: var(--color-primary-dark);
   color: var(--color-font-primary-dark);
   border-bottom: 1px solid;
@@ -21,18 +19,15 @@ header {
 
 #vertical-line {
   height: 1.5rem;
-
   border: 1px solid;
 }
 
 main {
   height: 100%;
   padding: var(--spacing);
-
   display: flex;
   align-items: stretch;
   gap: var(--spacing);
-
   background: var(--color-primary-light);
 }
 
@@ -52,17 +47,14 @@ main {
   padding: var(--spacing);
 }
 
-
 #left-section .card:first-child div.card-title {
   width: 100%;
   padding: var(--spacing-half);
-
   text-align: center;
 }
 
 #left-section .card:last-child {
   flex-grow: 1;
-
   display: flex;
   flex-direction: column;
 }
@@ -73,26 +65,22 @@ main {
 
 #right-section {
   flex-grow: 1;
-
   display: flex;
   flex-direction: column;
   gap: var(--spacing);
 }
 
-#right-section .card{
+#right-section .card {
   flex-grow: 1;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--spacing-quarter);
-
   padding: var(--spacing);
 }
 
 #top-right-section {
   flex-grow: 1;
-
   display: flex;
   gap: var(--spacing);
 }
@@ -116,7 +104,6 @@ main {
 #bottom-right-section .placeholder {
   height: 100%;
   width: 100%;
-
   background: var(--color-secondary-light);
 }
 
@@ -130,33 +117,29 @@ main {
 
 .bank-info {
   flex-grow: 1;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.bank-info>div{
+.bank-info>div {
   font: var(--font-headline-6);
 }
 
-.bank-info>div span{
+.bank-info>div span {
   vertical-align: sub;
 }
 
-.bank-info .caption{
+.bank-info .caption {
   display: inline-block;
-
   width: 50%;
-
   font: var(--font-caption);
   text-align: left;
 }
 
-.bank-info .card-title{
+.bank-info .card-title {
   display: inline-block;
-
   width: 50%;
   text-align: right;
 }

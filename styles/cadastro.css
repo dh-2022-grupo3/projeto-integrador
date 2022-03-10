@@ -1,76 +1,68 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
 }
 
-html,
-body{
-    height: 100%
-
+html, body {
+  height: 100%
 }
 
 .container {
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 100%;
-margin: 0 20px;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  margin: 0 20px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    line-height: 30px;
-    gap: 10px;
-
-
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  gap: 10px;
 }
 
 .primeira-coluna {
-    width: 40%;
-    height: 30%;
-    align-content: center;
-    border-radius: 15px;
-    flex: 1 0 auto
+  width: 40%;
+  height: 30%;
+  align-content: center;
+  border-radius: 15px;
+  flex: 1 0 auto
 }
 
 .segunda-coluna {
-    width: 100%;
-    background-color: #499f99;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    /* height: 100%; */
-    justify-content: center;
-    padding: 20px;
-    align-items: center;
+  width: 100%;
+  background-color: #499f99;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
 }
 
-.segunda-coluna .btn-entrar{
-    display: block;
-    font-size: 20px;
-    border-radius: 15%;
-    padding: 5px 20px;
-
+.segunda-coluna .btn-entrar {
+  display: block;
+  font-size: 20px;
+  border-radius: 15%;
+  padding: 5px 20px;
 }
 
 .lista-sociais {
-    display: flex;
-    justify-content: center;
-    line-height: 50px;
-    list-style: none;
-    gap: 10px
-    
+  display: flex;
+  justify-content: center;
+  line-height: 50px;
+  list-style: none;
+  gap: 10px
 }
 
 .primeira-coluna .title {
-    padding-left: 160px;
-    margin-block: 30px;
+  padding-left: 160px;
+  margin-block: 30px;
 }
 
 #main-logo {
-    font-size: 90px;
+  font-size: 90px;
 }
-

@@ -3,5 +3,6 @@
     "christian-kohler.path-intellisense",
     "dbaeumer.vscode-eslint",
     "ecmel.vscode-html-css",
+    "HookyQR.beautify",
   ]
 }
