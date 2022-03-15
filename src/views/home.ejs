@@ -54,11 +54,11 @@
       <section id="top-right-section">
         <div class="card">
           <span class="card-title">Esse mês</span>
-          <%- include('./partials/transaction-table', {transactionTable}) %>
+          <%- include('./partials/transaction-table', {table: transactionTable, includeCSS: true}) %>
         </div>
         <div class="card">
           <span class="card-title">Próximo mês</span>
-          <%- include('./partials/transaction-table', {transactionTable: futureTransactionTable}) %>
+          <%- include('./partials/transaction-table', {table: futureTransactionTable}) %>
         </div>
       </section>
       <section id="bottom-right-section">
