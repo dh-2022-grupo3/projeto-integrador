@@ -1,0 +1,31 @@
+.transaction-table {
+  display: flex;
+  flex-direction: row;
+}
+
+.transaction-table-column {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.transaction-table-column:first-of-type {
+  border-left: 1px solid black;
+}
+
+.transaction-table-column span {
+  padding: 0 var(--spacing-half);
+  border-bottom: 1px solid black;
+}
+
+.transaction-table-total {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.transaction-table-total span {
+  font: var(--font-subtitle-2);
+  padding: 0 var(--spacing-half);
+}
