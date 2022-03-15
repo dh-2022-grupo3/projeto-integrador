@@ -1,0 +1,20 @@
+<div class="transaction-table">
+  <div class="transaction-table-column">
+    <% transactionTable.values.forEach(value => { %>
+    <span style="color: <%= value >= 0 ? "unset" : "red" %>;">R$ <%= Math.abs(value) %> </span>
+    <% }) %>
+  </div>
+  <div class="transaction-table-column description-column">
+    <% transactionTable.descriptions.forEach(description => { %>
+    <span><%= description %> </span>
+    <% }) %>
+  </div>
+  <div class="transaction-table-column">
+    <% transactionTable.dates.forEach(date => { %>
+    <span><%= date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }); %> </span>
+    <% }) %>
+  </div>
+</div>
+<div class="transaction-table-total">
+  <span style="color: <%= transactionTable.total >= 0 ? "unset" : "red" %>;">R$ <%= transactionTable.total %> </span>
+</div>
