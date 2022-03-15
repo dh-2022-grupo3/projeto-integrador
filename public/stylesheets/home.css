@@ -171,6 +171,7 @@ main {
 }
 
 .transaction-table-total span {
+  font: var(--font-subtitle-2);
   padding: 0 var(--spacing-half);
 }
 
