@@ -44,18 +44,9 @@ main {
   padding: var(--spacing);
 }
 
-#left-section .card:first-child div:first-child span {
-  font: var(--font-subtitle-1);
-}
-
 #left-section .card:first-child div:last-child {
-  font: var(--font-headline-6);
   width: 100%;
   text-align: center;
-}
-
-#left-section .card:first-child div:last-child span {
-  font: var();
 }
 
 #left-section .card:last-child {
@@ -89,14 +80,6 @@ main {
   gap: var(--spacing);
 }
 
-#top-right-section .overline {
-  font: var(--font-overline);
-}
-
-#top-right-section .caption {
-  font: var(--font-caption);
-}
-
 #bottom-right-section {
   flex-grow: 1;
 }
@@ -113,10 +96,6 @@ main {
 
 .card {
   background: white;
-}
-
-.card-title {
-  font-weight: bolder;
 }
 
 .bank-info {

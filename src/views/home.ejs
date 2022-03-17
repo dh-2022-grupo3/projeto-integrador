@@ -21,10 +21,10 @@
     <section id="left-section">
       <div class="card">
         <div>
-          <span>Balanço</span>
+          <span class="font-subtitle-1">Balanço</span>
         </div>
         <div>
-          <span>R$ <%= user.balance %></span>
+          <span class="font-headline-6">R$ <%= user.balance %></span>
         </div>
       </div>
       <div class="card">
@@ -50,11 +50,11 @@
     <section id="right-section">
       <section id="top-right-section">
         <div class="card">
-          <span class="card-title">Esse mês</span>
+          <span class="font-subtitle-1">Esse mês</span>
           <%- include('./partials/transaction-table', {table: transactionTable, includeCSS: true}) %>
         </div>
         <div class="card">
-          <span class="card-title">Próximo mês</span>
+          <span class="font-subtitle-1">Próximo mês</span>
           <%- include('./partials/transaction-table', {table: futureTransactionTable}) %>
         </div>
       </section>
