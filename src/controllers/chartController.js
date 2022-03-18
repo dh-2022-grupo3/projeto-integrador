@@ -1,6 +1,6 @@
 const chartController = {
   index: (req, res) => {
-    res.render('my_chart', {
+    res.render('chart', {
       styles: ['chart'],
     });
   },
