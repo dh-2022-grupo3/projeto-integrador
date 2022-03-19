@@ -1,6 +1,7 @@
-const ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('myChart')?.getContext('2d');
 const verticalBar = document.getElementById('verticalBar').getContext('2d');
 
+if (ctx != null) {
 const myChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
@@ -22,6 +23,7 @@ const myChart = new Chart(ctx, {
     responsive: true,
   },
 });
+}
 
 // Chart Bar
 
@@ -30,7 +32,7 @@ const vertical = new Chart(verticalBar, {
   data: {
     labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
     datasets: [{
-      label: 'Lorem',
+      label: 'Rendimentos',
       data: [12, 19, 13, 15, 12, 10, 16, 9, 14, 8, 12, 7],
       backgroundColor: [
         'rgba(255, 99, 132, 1)',
