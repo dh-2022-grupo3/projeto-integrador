@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<% styles.push('transaction-table') %>
 <%- include('./partials/head') %>
 
 <body>
@@ -51,11 +52,11 @@
       <section id="top-right-section">
         <div class="card">
           <span class="font-subtitle-1">Esse mês</span>
-          <%- include('./partials/transaction-table', {table: transactionTable, includeCSS: true}) %>
+          <%- include('./partials/transaction-table', {table}) %>
         </div>
         <div class="card">
           <span class="font-subtitle-1">Próximo mês</span>
-          <%- include('./partials/transaction-table', {table: futureTransactionTable}) %>
+          <%- include('./partials/transaction-table', {table: futureTable}) %>
         </div>
       </section>
       <section id="bottom-right-section">

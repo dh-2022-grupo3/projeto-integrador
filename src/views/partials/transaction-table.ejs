@@ -1,23 +1,25 @@
-<% if (locals.includeCSS) { %>
-<link rel="stylesheet" href="./stylesheets/transaction-table.css">
-<% } %>
-<div class="transaction-table">
-  <div class="transaction-table-column">
-    <% table.values.forEach(value => { %>
-    <span style="color: <%= value >= 0 ? "unset" : "red" %>;">R$ <%= Math.abs(value) %> </span>
+<table class="transaction-table">
+  <thead>
+    <tr class="font-subtitle-2">
+      <th scope="col">Data</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Valor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% table.transactions.forEach(transaction => { %>
+    <tr>
+      <th scope="row"><%= transaction.dateParsed %></th>
+      <td><%= transaction.description %></td>
+      <td class="<%= transaction.value < 0 ? 'negative' : '' %>"><%= transaction.valueParsed %></td>
+    </tr>
     <% }) %>
-  </div>
-  <div class="transaction-table-column description-column">
-    <% table.descriptions.forEach(description => { %>
-    <span><%= description %> </span>
-    <% }) %>
-  </div>
-  <div class="transaction-table-column">
-    <% table.dates.forEach(date => { %>
-    <span><%= date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }); %> </span>
-    <% }) %>
-  </div>
-</div>
-<div class="transaction-table-total">
-  <span style="color: <%= table.total >= 0 ? "unset" : "red" %>;">R$ <%= table.total %> </span>
-</div>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th scope="row" class="font-subtitle-2">Total</th>
+      <td></td>
+      <td class="<%= table.total < 0 ? 'negative' : '' %>"><%= table.totalParsed %></td>
+    </tr>
+  </tfoot>
+</table>
