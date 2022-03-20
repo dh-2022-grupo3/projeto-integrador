@@ -62,9 +62,9 @@
         <div class="cardBox">
           <div class="card">
             <div>
-              <% valores.forEach(() => { %>
-              <div class="numbers">R$ 110,80</div>
-              <div class="cardName">Previsão de Gastos</div>
+              <% valoresPrevisao.forEach((montante) => { %>
+              <div class="numbers">R$ <%= montante.valor %> </div>
+              <div class="cardName"> <%= montante.descricao %> </div>
               <% }) %>
             </div>
             <div class="iconBx">
@@ -73,8 +73,11 @@
           </div>
           <div class="card">
             <div>
-              <div class="numbers">R$ 123,45</div>
-              <div class="cardName">Pagamentos</div>
+              <% valoresPagamentos.forEach((montante) => { %>
+              <div class="numbers">R$ <%= montante.valor %> </div>
+              <div class="cardName"> <%= montante.descricao%> </div>
+              <% }) %>
+
             </div>
             <div class="iconBx">
               <span class="material-icons">payments</span>
@@ -82,8 +85,11 @@
           </div>
           <div class="card">
             <div>
-              <div class="numbers">R$ 543,21</div>
-              <div class="cardName">Balanço</div>
+              <% valoresBalanco.forEach((montante) => { %>
+              <div class="numbers">R$ <%= montante.valor %> </div>
+              <div class="cardName"> <%= montante.descricao %> </div>
+              <% }) %>
+
             </div>
             <div class="iconBx">
               <span class="material-icons">account_balance_wallet</span>

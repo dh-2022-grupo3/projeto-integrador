@@ -1,14 +1,33 @@
 const chartController = {
   index: (req, res) => {
-    const valores = [
+    const valoresPrevisao = [
       {
-        valor: 40,
-        descricao: 'Previsao de Gastos',
+        valor: '500,00',
+        descricao: 'Previsão de Gastos',
       },
     ];
+
+    const valoresPagamentos = [
+      {
+        valor: '125,80',
+        descricao: 'Pagamentos',
+      },
+
+    ];
+
+    const valoresBalanco = [
+      {
+        valor: '374,20',
+        descricao: 'Balanço',
+
+      },
+    ];
+
     res.render('chart', {
       styles: ['chart'],
-      valores,
+      valoresPrevisao,
+      valoresPagamentos,
+      valoresBalanco,
     });
   },
 };
