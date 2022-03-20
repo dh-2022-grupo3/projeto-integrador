@@ -5,17 +5,16 @@ if (ctx != null) {
 const myChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ['Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem', 'Lorem'],
+    labels: ['Pessoais', 'Transporte', 'Saúde', 'Educaçaão', 'Lazer'],
     datasets: [{
-      label: 'Lorem',
-      data: [12, 19, 3, 5, 2, 3],
+      label: 'Despesas',
+      data: [12, 19, 3, 5, 2],
       backgroundColor: [
         'rgba(255, 99, 132, 0.8)',
         'rgba(54, 162, 235, 0.8)',
         'rgba(255, 206, 86, 0.8)',
         'rgba(75, 192, 192, 0.8)',
         'rgba(153, 102, 255, 0.8)',
-        'rgba(255, 159, 64, 0.8)',
       ],
     }],
   },
