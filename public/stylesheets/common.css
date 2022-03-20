@@ -4,40 +4,49 @@
 
 html, body {
   font: var(--font-body-1);
+  letter-spacing: var(--spacing-body-1);
   height: 100%;
 }
 
 h1 {
   font: var(--font-headline-1);
+  letter-spacing: var(--spacing-headline-1);
 }
 
 h2 {
   font: var(--font-headline-2);
+  letter-spacing: var(--spacing-headline-2);
 }
 
 h3 {
   font: var(--font-headline-3);
+  letter-spacing: var(--spacing-headline-3);
 }
 
 h4 {
   font: var(--font-headline-4);
+  letter-spacing: var(--spacing-headline-4);
 }
 
 h5 {
   font: var(--font-headline-5);
+  letter-spacing: var(--spacing-headline-5);
 }
 
 h6 {
   font: var(--font-headline-6);
+  letter-spacing: var(--spacing-headline-6);
 }
 
 button {
   font: var(--font-button);
+  letter-spacing: var(--spacing-button);
 }
 
 figcaption, caption,
 label, legend {
   font: var(--font-caption);
+  letter-spacing: var(--spacing-caption);
 }
 
 a {
