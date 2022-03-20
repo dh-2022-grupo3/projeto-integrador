@@ -62,35 +62,29 @@
         <div class="cardBox">
           <div class="card">
             <div>
-
               <div class="numbers">R$ <%= valoresPrevisao.valor %> </div>
               <div class="cardName"> <%= valoresPrevisao.descricao %> </div>
-
             </div>
             <div class="iconBx">
-              <span class="material-icons">sentiment_satisfied_alt</span>
+              <span class="material-icons"><%= valoresPrevisao.icone %> </span>
             </div>
           </div>
           <div class="card">
             <div>
-
               <div class="numbers">R$ <%= valoresPagamentos.valor %> </div>
               <div class="cardName"> <%= valoresPagamentos.descricao%> </div>
-
             </div>
             <div class="iconBx">
-              <span class="material-icons">payments</span>
+              <span class="material-icons"> <%= valoresPagamentos.icone %> </span>
             </div>
           </div>
           <div class="card">
             <div>
-
               <div class="numbers">R$ <%= valoresBalanco.valor %> </div>
               <div class="cardName"> <%= valoresBalanco.descricao %> </div>
-
             </div>
             <div class="iconBx">
-              <span class="material-icons">account_balance_wallet</span>
+              <span class="material-icons"> <%= valoresBalanco.icone %> </span>
             </div>
           </div>
         </div>
