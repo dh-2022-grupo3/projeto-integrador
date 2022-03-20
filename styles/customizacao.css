@@ -7,9 +7,7 @@ header {
   display: flex;
   align-items: center;
   gap: var(--spacing);
-
   padding: var(--spacing-half);
-
   background: var(--color-primary-dark);
   color: var(--color-font-primary-dark);
   border-bottom: 1px solid;
@@ -21,18 +19,15 @@ header {
 
 #vertical-line {
   height: 1.5rem;
-
   border: 1px solid;
 }
 
 main {
   height: 100%;
   padding: var(--spacing);
-
   display: flex;
   align-items: stretch;
   gap: var(--spacing);
-
   background: var(--color-primary-light);
 }
 
@@ -44,13 +39,11 @@ main {
 
 #menuLeft .option:first-child {
   flex-grow: 1;
-
   position: relative;
 }
 
 .card {
   padding: var(--spacing-half);
-
   background: white;
 }
 

@@ -4,7 +4,6 @@
   --spacing: 20px;
   --spacing-half: calc(var(--spacing) / 2);
   --spacing-quarter: calc(var(--spacing) / 4);
-
   --font-family: 'Roboto', sans-serif;
   --font-headline-1: 300 96px var(--font-family);
   --font-headline-2: 300 60px var(--font-family);
@@ -19,16 +18,13 @@
   --font-button: 500 14px var(--font-family);
   --font-caption: 400 12px var(--font-family);
   --font-overline: 400 10px var(--font-family);
-
   /* https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=499f99&secondary.color=9f494f */
-
   --color-primary: #499f99;
   --color-primary-dark: #09706b;
   --color-primary-light: #7bd0ca;
   --color-font-primary: #000;
   --color-font-primary-dark: #fff;
   --color-font-primary-light: #000;
-
   --color-secondary: #9f494f;
   --color-secondary-dark: #6d1c27;
   --color-secondary-light: #d3777b;

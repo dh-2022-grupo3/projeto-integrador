@@ -1,3 +1,38 @@
 {
-    "liveServer.settings.port": 5501
+  "css.completion.completePropertyWithSemicolon": true,
+  "css.lint.argumentsInColorFunction": "error",
+  "css.lint.compatibleVendorPrefixes": "error",
+  "css.lint.duplicateProperties": "error",
+  "css.lint.emptyRules": "error",
+  "css.lint.float": "error",
+  "css.lint.fontFaceProperties": "error",
+  "css.lint.hexColorLength": "error",
+  "css.lint.important": "error",
+  "css.lint.propertyIgnoredDueToDisplay": "error",
+  "css.lint.vendorPrefix": "error",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  },
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "html.format.enable": true,
+  "html.format.endWithNewline": true,
+  "html.format.maxPreserveNewLines": 1,
+  "html.format.templating": true,
+  "html.format.wrapAttributes": "preserve-aligned",
+  "html.format.wrapLineLength": 0,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
 }

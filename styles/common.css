@@ -1,11 +1,8 @@
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   font: var(--font-body-1);
   height: 100%;
 }
@@ -38,10 +35,8 @@ button {
   font: var(--font-button);
 }
 
-figcaption,
-caption,
-label,
-legend {
+figcaption, caption,
+label, legend {
   font: var(--font-caption);
 }
 
