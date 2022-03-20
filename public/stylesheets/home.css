@@ -43,13 +43,8 @@ main {
   justify-content: center;
 }
 
-#left-section .card:first-child div:first-child {
-  padding: var(--spacing);
-}
-
-#left-section .card:first-child div.card-title {
+#left-section .card:first-child div:last-child {
   width: 100%;
-  padding: var(--spacing-half);
   text-align: center;
 }
 
@@ -59,8 +54,14 @@ main {
   flex-direction: column;
 }
 
-#left-section .card:last-child span.card-title {
-  padding: var(--spacing-half);
+#left-section .card:last-child span {
+  margin-bottom: var(--spacing-half);
+}
+
+#left-section form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-quarter);
 }
 
 #right-section {
@@ -75,21 +76,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: var(--spacing);
 }
 
 #top-right-section {
   flex-grow: 1;
   display: flex;
   gap: var(--spacing);
-}
-
-#top-right-section .overline {
-  font: var(--font-overline);
-}
-
-#top-right-section .caption {
-  font: var(--font-caption);
 }
 
 #bottom-right-section {
@@ -108,10 +100,7 @@ main {
 
 .card {
   background: white;
-}
-
-.card-title {
-  font-weight: bolder;
+  padding: var(--spacing);
 }
 
 .bank-info {

@@ -1,8 +1,7 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-const ctx = document.getElementById('myChart').getContext('2d');
+const ctx = document.getElementById('myChart')?.getContext('2d');
 const verticalBar = document.getElementById('verticalBar').getContext('2d');
 
+if (ctx != null) {
 const myChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
@@ -23,6 +22,7 @@ const myChart = new Chart(ctx, {
     responsive: true,
   },
 });
+}
 
 // Chart Bar
 

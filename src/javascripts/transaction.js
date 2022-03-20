@@ -4,6 +4,9 @@ class Transaction {
     this.value = value;
     this.description = description;
     this.date = date;
+
+    this.dateParsed = date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
+    this.valueParsed = `R$ ${Math.abs(value)}`;
   }
 }
 
