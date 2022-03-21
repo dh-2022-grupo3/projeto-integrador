@@ -1,29 +1,16 @@
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-header {
+body>div {
   display: flex;
-  align-items: center;
-  gap: var(--spacing);
-  padding: var(--spacing-half);
-  background: var(--color-primary-dark);
-  color: var(--color-font-primary-dark);
-  border-bottom: 1px solid;
-}
-
-#spacer {
-  flex-grow: 1;
-}
-
-#vertical-line {
-  height: 1.5rem;
-  border: 1px solid;
+  flex-direction: column;
+  width: 100%;
 }
 
 main {
-  height: 100%;
+  flex-grow: 1;
   padding: var(--spacing);
   display: flex;
   align-items: stretch;
@@ -43,13 +30,8 @@ main {
   justify-content: center;
 }
 
-#left-section .card:first-child div:first-child {
-  padding: var(--spacing);
-}
-
-#left-section .card:first-child div.card-title {
+#left-section .card:first-child div:last-child {
   width: 100%;
-  padding: var(--spacing-half);
   text-align: center;
 }
 
@@ -59,8 +41,14 @@ main {
   flex-direction: column;
 }
 
-#left-section .card:last-child span.card-title {
-  padding: var(--spacing-half);
+#left-section .card:last-child span {
+  margin-bottom: var(--spacing-half);
+}
+
+#left-section form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-quarter);
 }
 
 #right-section {
@@ -74,23 +62,13 @@ main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: var(--spacing-quarter);
-  padding: var(--spacing);
+  justify-content: flex-start;
 }
 
 #top-right-section {
   flex-grow: 1;
   display: flex;
   gap: var(--spacing);
-}
-
-#top-right-section .overline {
-  font: var(--font-overline);
-}
-
-#top-right-section .caption {
-  font: var(--font-caption);
 }
 
 #bottom-right-section {
@@ -109,10 +87,8 @@ main {
 
 .card {
   background: white;
-}
-
-.card-title {
-  font-weight: bolder;
+  padding: var(--spacing);
+  border-radius: 15px;
 }
 
 .bank-info {
@@ -142,4 +118,8 @@ main {
   display: inline-block;
   width: 50%;
   text-align: right;
+}
+
+.description-column {
+  flex-grow: 1;
 }

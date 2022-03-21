@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% styles.push('transaction-table', 'navigation', 'header') %>
+<%- include('./partials/head') %>
+
+<body>
+  <%- include('./partials/navigation') %>
+
+  <div>
+    <%- include('./partials/header') %>
+    <main>
+      <section id="left-section">
+        <div class="card">
+          <div>
+            <span class="font-subtitle-1">Balanço</span>
+          </div>
+          <div>
+            <span class="font-headline-6">R$ <%= user.balance %></span>
+          </div>
+        </div>
+        <div class="card">
+          <span class="font-subtitle-2">Cadastrar entrada ou saída</span>
+          <form>
+            <label>Valor <input type="text" name="value"></label>
+            <label>Descrição <input type="text" name="description"></label>
+            <label>Data <input type="datetime-local" name="date"></label>
+            <input type="submit" value="Cadastrar">
+          </form>
+        </div>
+      </section>
+      <section id="right-section">
+        <section id="top-right-section">
+          <div class="card">
+            <span class="font-subtitle-1">Esse mês</span>
+            <%- include('./partials/transaction-table', {table}) %>
+          </div>
+          <div class="card">
+            <span class="font-subtitle-1">Próximo mês</span>
+            <%- include('./partials/transaction-table', {table: futureTable}) %>
+          </div>
+        </section>
+        <section id="bottom-right-section">
+          <div class="card">
+            <a href="/chart">
+              <canvas id="verticalBar"></canvas>
+            </a>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="/javascripts/my_chart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-half);
+  background: var(--color-primary-dark);
+  color: #fff;
+}
+
+header .toggle {
+  cursor: pointer;
+}
+
+header .user {
+  cursor: pointer;
+}

@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --spacing: 20px;
+  --spacing-half: calc(var(--spacing) / 2);
+  --spacing-quarter: calc(var(--spacing) / 4);
+  --font-family: 'Roboto', sans-serif;
+  --font-headline-1: 300 96px var(--font-family);
+  --font-headline-2: 300 60px var(--font-family);
+  --font-headline-3: 400 48px var(--font-family);
+  --font-headline-4: 400 34px var(--font-family);
+  --font-headline-5: 400 24px var(--font-family);
+  --font-headline-6: 500 20px var(--font-family);
+  --font-subtitle-1: 400 16px var(--font-family);
+  --font-subtitle-2: 500 14px var(--font-family);
+  --font-body-1: 400 16px var(--font-family);
+  --font-body-2: 400 14px var(--font-family);
+  --font-button: 500 14px var(--font-family);
+  --font-caption: 400 12px var(--font-family);
+  --font-overline: 400 10px var(--font-family);
+  --spacing-headline-1: -1.5px;
+  --spacing-headline-2: -0.5px;
+  --spacing-headline-3: 0;
+  --spacing-headline-4: 0.25px;
+  --spacing-headline-5: 0;
+  --spacing-headline-6: 0.15px;
+  --spacing-subtitle-1: 0.15px;
+  --spacing-subtitle-2: 0.1px;
+  --spacing-body-1: 0.5px;
+  --spacing-body-2: 0.25px;
+  --spacing-button: 1.25px;
+  --spacing-caption: 0.4px;
+  --spacing-overline: 1.5px;
+  /* https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=499f99&secondary.color=9f494f */
+  --color-primary: #499f99;
+  --color-primary-dark: #09706b;
+  --color-primary-light: #7bd0ca;
+  --color-font-primary: #000;
+  --color-font-primary-dark: #fff;
+  --color-font-primary-light: #000;
+  --color-secondary: #9f494f;
+  --color-secondary-dark: #6d1c27;
+  --color-secondary-light: #d3777b;
+  --color-font-secondary: #fff;
+  --color-font-secondary-dark: #fff;
+  --color-font-secondary-light: #000;
+}
+
+.font-headline-1 {
+  font: var(--font-headline-1);
+  letter-spacing: var(--spacing-headline-1);
+}
+
+.font-headline-2 {
+  font: var(--font-headline-2);
+  letter-spacing: var(--spacing-headline-2);
+}
+
+.font-headline-3 {
+  font: var(--font-headline-3);
+  letter-spacing: var(--spacing-headline-3);
+}
+
+.font-headline-4 {
+  font: var(--font-headline-4);
+  letter-spacing: var(--spacing-headline-4);
+}
+
+.font-headline-5 {
+  font: var(--font-headline-5);
+  letter-spacing: var(--spacing-headline-5);
+}
+
+.font-headline-6 {
+  font: var(--font-headline-6);
+  letter-spacing: var(--spacing-headline-6);
+}
+
+.font-subtitle-1 {
+  font: var(--font-subtitle-1);
+  letter-spacing: var(--spacing-subtitle-1);
+}
+
+.font-subtitle-2 {
+  font: var(--font-subtitle-2);
+  letter-spacing: var(--spacing-subtitle-2);
+}
+
+.font-body-1 {
+  font: var(--font-body-1);
+  letter-spacing: var(--spacing-body-1);
+}
+
+.font-body-2 {
+  font: var(--font-body-2);
+  letter-spacing: var(--spacing-body-2);
+}
+
+.font-button {
+  font: var(--font-button);
+  letter-spacing: var(--spacing-button);
+}
+
+.font-caption {
+  font: var(--font-caption);
+  letter-spacing: var(--spacing-caption);
+}
+
+.font-overline {
+  font: var(--font-overline);
+  letter-spacing: var(--spacing-overline);
+}

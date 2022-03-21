@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% styles.push('header', 'navigation') %>
+<%- include('./partials/head') %>
+
+<body>
+  <%- include('./partials/navigation') %>
+  <div>
+    <%- include('./partials/header') %>
+    <main>
+      <section id="menuLeft">
+        <section class="card">
+          <h3>Dados Pessoais</h3>
+        </section>
+        <section class="card">
+          <h3>Configurações</h3>
+        </section>
+        <section class="card">
+          <h3>Preferências</h3>
+        </section>
+        <section class="card">
+          <h3>Interesses</h3>
+        </section>
+      </section>
+      <section id="desktop">
+        <form>
+          <label for="formA">Nome:</label><br />
+          <input type="text" id="formA" name="formA" /><br />
+          <label for="formB">Sobrenome:</label><br />
+          <input type="text" id="formB" name="formB" />
+        </form>
+        <p>Escolaridade</p>
+        <form>
+          <input type="radio" id="formC" name="formRadio" value="Lorem" />
+          <label for="formC">Ensino médio</label><br />
+          <input type="radio" id="formD" name="formRadio" value="ipsum" />
+          <label for="formD">Ensino Superior</label><br />
+          <input type="radio" id="formE" name="formRadio" value="dolor" />
+          <label for="formE">Pós Graduado</label>
+        </form>
+        <p>Fonte de Renda</p>
+        <form>
+          <input type="checkbox" id="formF" name="formCheckbox" value="formF" />
+          <label for="formF">Empregado</label><br />
+          <input type="checkbox" id="formG" name="formCheckbox" value="formG" />
+          <label for="formG">Empregador</label><br />
+          <input type="checkbox" id="formH" name="formCheckbox" value="formH" />
+          <label for="formH">Outros</label>
+        </form>
+        <p>Renda média mensal (salário mínimo)</p>
+        <form>
+          <select id="select" name="select">
+            <option value="s1">até 3</option>
+            <option value="s2">de 3 a 10</option>
+            <option value="s3">acima de 10</option>
+            <option value="s4">sem renda</option>
+          </select>
+        </form>
+        <form>
+          <label for="textarea">
+            <p>Descrição</p>
+          </label>
+          <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<% styles.push('navigation', 'header') %>
+<%- include('./partials/head') %>
+
+<body>
+  <%- include('./partials/navigation') %>
+
+  <main>
+    <%- include('./partials/header') %>
+
+    <!-- cards -->
+    <div class="cardBox">
+      <% dados.forEach(dado => { %>
+      <div class="card">
+        <div>
+          <div class="numbers">R$ <%= dado.valor %> </div>
+          <div class="cardName"> <%= dado.descricao %> </div>
+        </div>
+        <div class="iconBx">
+          <span class="material-icons"><%= dado.icone %> </span>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <!-- charts -->
+    <div class="graphBox">
+
+      <div class="box">
+        <canvas id="myChart"></canvas>
+      </div>
+      <div class="box">
+        <canvas id="verticalBar"></canvas>
+      </div>
+    </div>
+  </main>
+  <script>
+    //menu
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+    let graphBox = document.querySelector('.graphBox')
+    toggle.onclick = function () {
+      navigation.classList.toggle('active');
+      main.classList.toggle('active');
+      // graphBox.classList.toggle('active');
+    }
+
+    //hovered
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink() {
+      list.forEach((item) =>
+        item.classList.remove('hovered'));
+      this.classList.add('hovered');
+    }
+    list.forEach((item) =>
+      item.addEventListener('mouseover', activeLink));
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="/javascripts/my_chart.js"></script>
+</body>
+
+</html>
