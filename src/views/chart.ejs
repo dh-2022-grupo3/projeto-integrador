@@ -1,91 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<% styles.push('navigation', 'header') %>
 <%- include('./partials/head') %>
 
 <body>
+  <%- include('./partials/navigation') %>
+
   <main>
-    <aside>
-      <div class="container">
-        <div class="navigation">
-          <ul>
-            <li>
-              <a href="#">
-                <span class="material-icons">
-                  laptop
-                </span>
+    <%- include('./partials/header') %>
 
-                <span class="title">Name</span>
-              </a>
-            </li>
-            <li>
-              <a href="/home">
-                <span class="material-icons">home</span>
-                <span class="title">Home</span>
-              </a>
-            </li>
-            <li>
-              <a href="/customizacao">
-                <span class="material-icons">settings</span>
-                <span class="title">Customização</span>
-              </a>
-            </li>
-            <li>
-              <a href="/login">
-                <span class="material-icons">logout</span>
-                <span class="title">Sair</span>
-              </a>
-            </li>
-          </ul>
+    <!-- cards -->
+    <div class="cardBox">
+      <% dados.forEach(dado => { %>
+      <div class="card">
+        <div>
+          <div class="numbers">R$ <%= dado.valor %> </div>
+          <div class="cardName"> <%= dado.descricao %> </div>
+        </div>
+        <div class="iconBx">
+          <span class="material-icons"><%= dado.icone %> </span>
         </div>
       </div>
-    </aside>
+      <% }) %>
+    </div>
 
-    <!-- main -->
-    <section>
-      <div class="main">
-        <div class="topbar">
-          <div class="toggle">
-            <span class="material-icons">menu</span>
-          </div>
-          <div>
-            <span>Análise</span>
-          </div>
+    <!-- charts -->
+    <div class="graphBox">
 
-          <!-- userImage -->
-          <div class="user">
-            <span class="material-icons">account_circle</span>
-          </div>
-        </div>
-
-        <!-- cards -->
-        <div class="cardBox">
-          <% dados.forEach(dado => { %>
-          <div class="card">
-            <div>
-              <div class="numbers">R$ <%= dado.valor %> </div>
-              <div class="cardName"> <%= dado.descricao %> </div>
-            </div>
-            <div class="iconBx">
-              <span class="material-icons"><%= dado.icone %> </span>
-            </div>
-          </div>
-          <% }) %>
-        </div>
-
-        <!-- charts -->
-        <div class="graphBox">
-
-          <div class="box">
-            <canvas id="myChart"></canvas>
-          </div>
-          <div class="box">
-            <canvas id="verticalBar"></canvas>
-          </div>
-        </div>
-
+      <div class="box">
+        <canvas id="myChart"></canvas>
       </div>
-    </section>
+      <div class="box">
+        <canvas id="verticalBar"></canvas>
+      </div>
+    </div>
   </main>
   <script>
     //menu

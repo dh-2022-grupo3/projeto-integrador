@@ -5,6 +5,7 @@ const customizacaoController = {
     res.render('customizacao', {
       styles: ['customizacao'],
       user,
+      title: 'Customização',
     });
   },
 };

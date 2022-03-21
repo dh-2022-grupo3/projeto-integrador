@@ -1,29 +1,16 @@
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 
-header {
+body>div {
   display: flex;
-  align-items: center;
-  gap: var(--spacing);
-  padding: var(--spacing-half);
-  background: var(--color-primary-dark);
-  color: var(--color-font-primary-dark);
-  border-bottom: 1px solid;
-}
-
-#spacer {
-  flex-grow: 1;
-}
-
-#vertical-line {
-  height: 1.5rem;
-  border: 1px solid;
+  flex-direction: column;
+  width: 100%;
 }
 
 main {
-  height: 100%;
+  flex-grow: 1;
   padding: var(--spacing);
   display: flex;
   align-items: stretch;
@@ -101,6 +88,7 @@ main {
 .card {
   background: white;
   padding: var(--spacing);
+  border-radius: 15px;
 }
 
 .bank-info {
