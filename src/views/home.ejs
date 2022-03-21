@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<% styles.push('transaction-table') %>
 <%- include('./partials/head') %>
 
 <body>
   <header>
     <span class="material-icons">menu</span>
     <a href="/home">
-      <h4>Titulo</h4>
+      <h4>Projeto Integrador</h4>
     </a>
     <div id="spacer"></div>
-    <strong>Usuario</strong>
+    <strong><%= user.name %> </strong>
     <a href="/login"><span class="material-icons">account_circle</span></a>
     <a href="/customizacao"><span class="material-icons">settings</span></a>
     <div id="vertical-line"></div>
@@ -21,62 +22,45 @@
     <section id="left-section">
       <div class="card">
         <div>
-          <span class="card-title">Lorem</span>
-          <br>
-          ipsum dolor sit amet consectetur adipisicing elit
+          <span class="font-subtitle-1">Balanço</span>
         </div>
-        <div class="card-title">
-          0800 XXX XXXX
+        <div>
+          <span class="font-headline-6">R$ <%= user.balance %></span>
         </div>
       </div>
       <div class="card">
-        <span class="card-title">Lorem ipsum dolor sit</span>
-        <div class="bank-info">
-          <div>
-            <span class="material-icons">account_balance</span> Amet consectetur
-          </div>
-          <span class="caption">Adipisicing elit</span>
-          <br>
-          <span class="card-title">R$ X.XXX,XX</span>
-        </div>
-        <div class="bank-info">
-          <div>
-            <span class="material-icons">account_balance</span> Rerum quas reiciendis
-          </div>
-          <span class="caption">Provident dicta</span>
-          <br>
-          <span class="card-title">R$ X.XXX,XX</span>
-        </div>
-      </div>
+        <span class="font-subtitle-2">Cadastrar entrada ou saída</span>
+        <form>
+          <label>Valor <input type="text" name="value"></label>
+          <label>Descrição <input type="text" name="description"></label>
+          <label>Data <input type="datetime-local" name="date"></label>
+          <input type="submit" value="Cadastrar">
+        </form>
       </div>
     </section>
     <section id="right-section">
       <section id="top-right-section">
         <div class="card">
-          <span class="overline">Lorem</span>
-          <br>
-          <span class="card-title">Ipsum dolor sit amet consectetur</span>
-          <br>
-          <span class="caption">Adipisicing elit</span>
+          <span class="font-subtitle-1">Esse mês</span>
+          <%- include('./partials/transaction-table', {table}) %>
         </div>
         <div class="card">
-          <span class="overline">Lorem</span>
-          <br>
-          <span class="card-title">Ipsum dolor sit amet consectetur</span>
-          <br>
-          <span class="caption">Adipisicing elit</span>
+          <span class="font-subtitle-1">Próximo mês</span>
+          <%- include('./partials/transaction-table', {table: futureTable}) %>
         </div>
       </section>
       <section id="bottom-right-section">
         <div class="card">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit
-          <a href="/chart" style="height: 100%;">
-            <div class="placeholder"></div>
+          <a href="/chart">
+            <canvas id="verticalBar"></canvas>
           </a>
         </div>
       </section>
     </section>
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+  <script src="/javascripts/my_chart.js"></script>
 </body>
 
 </html>
