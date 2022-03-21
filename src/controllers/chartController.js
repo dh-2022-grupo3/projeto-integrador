@@ -22,6 +22,7 @@ const chartController = {
     res.render('chart', {
       styles: ['chart'],
       dados,
+      title: 'Análise',
     });
   },
 };

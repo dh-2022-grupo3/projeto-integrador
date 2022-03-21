@@ -31,6 +31,7 @@ const homeController = {
         total: futureTotal,
         totalParsed: `R$ ${Math.abs(futureTotal)}`,
       },
+      title: 'Home',
     });
   },
 };
