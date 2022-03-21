@@ -87,6 +87,29 @@
       </div>
     </section>
   </main>
+  <script>
+    //menu
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+    let graphBox = document.querySelector('.graphBox')
+    toggle.onclick = function () {
+      navigation.classList.toggle('active');
+      main.classList.toggle('active');
+      // graphBox.classList.toggle('active');
+    }
+
+    //hovered
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink() {
+      list.forEach((item) =>
+        item.classList.remove('hovered'));
+      this.classList.add('hovered');
+    }
+    list.forEach((item) =>
+      item.addEventListener('mouseover', activeLink));
+  </script>
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
   <script src="/javascripts/my_chart.js"></script>
 </body>
