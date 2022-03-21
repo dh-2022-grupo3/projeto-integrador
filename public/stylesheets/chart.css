@@ -37,7 +37,7 @@ main {
 .cardBox .card {
   position: relative;
   background: var(--white);
-  padding: 30px;
+  padding: var(--spacing);
   border-radius: 15px;
   cursor: pointer;
   display: flex;
@@ -80,7 +80,7 @@ main {
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 30px;
+  gap: var(--spacing);
   min-height: 200px;
 }
 
