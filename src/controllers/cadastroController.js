@@ -12,7 +12,7 @@ const cadastroController = {
   salvarForm: (req, res) => {
     const { nome, email, senha } = req.body;
     const senhaCryp = bcrypt.hashSync(senha, 8);
-    const usuario = JSON.stringify({ nome, email, senha: senhaCryp });
+    const usuario = JSON.stringify([{ nome, email, senha: senhaCryp }]);
 
     fs.writeFileSync(usuarioJson, usuario);
     res.send('Cadastrado com sucesso');
