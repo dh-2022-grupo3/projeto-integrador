@@ -24,6 +24,8 @@ const loginController = {
       return res.status(401).json({ message: 'Senha inválida' });
     }
 
+    req.session.autorizado = true;
+
     return res.redirect('/home');
   },
 };
