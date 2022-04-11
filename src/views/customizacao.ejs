@@ -24,44 +24,37 @@
         </section>
       </section>
       <section id="desktop">
-        <form>
-          <label for="formA">Nome:</label><br />
-          <input type="text" id="formA" name="formA" /><br />
-          <label for="formB">Sobrenome:</label><br />
-          <input type="text" id="formB" name="formB" />
-        </form>
-        <p>Escolaridade</p>
-        <form>
-          <input type="radio" id="formC" name="formRadio" value="Lorem" />
-          <label for="formC">Ensino médio</label><br />
-          <input type="radio" id="formD" name="formRadio" value="ipsum" />
-          <label for="formD">Ensino Superior</label><br />
-          <input type="radio" id="formE" name="formRadio" value="dolor" />
-          <label for="formE">Pós Graduado</label>
-        </form>
-        <p>Fonte de Renda</p>
-        <form>
-          <input type="checkbox" id="formF" name="formCheckbox" value="formF" />
-          <label for="formF">Empregado</label><br />
-          <input type="checkbox" id="formG" name="formCheckbox" value="formG" />
-          <label for="formG">Empregador</label><br />
-          <input type="checkbox" id="formH" name="formCheckbox" value="formH" />
-          <label for="formH">Outros</label>
-        </form>
-        <p>Renda média mensal (salário mínimo)</p>
-        <form>
-          <select id="select" name="select">
-            <option value="s1">até 3</option>
-            <option value="s2">de 3 a 10</option>
-            <option value="s3">acima de 10</option>
-            <option value="s4">sem renda</option>
+        <form action="" method="post">
+          <label for="nome">Nome:</label><br />
+          <input type="text" id="nome" name="nome" /><br />
+          <label for="sobrenome">Sobrenome:</label><br />
+          <input type="text" id="sobrenome" name="sobrenome" />
+          <p>Escolaridade</p>
+          <input type="radio" id="medio" name="escolaridade" value="medio" />
+          <label for="medio">Ensino médio</label><br />
+          <input type="radio" id="superior" name="escolaridade" value="superior" />
+          <label for="superior">Ensino Superior</label><br />
+          <input type="radio" id="graduado" name="escolaridade" value="graduado" />
+          <label for="graduado">Pós Graduado</label>
+          <p>Fonte de Renda</p>
+          <input type="checkbox" id="empregado" name="fonte" value="empregado" />
+          <label for="empregado">Empregado</label><br />
+          <input type="checkbox" id="empregador" name="fonte" value="empregador" />
+          <label for="empregador">Empregador</label><br />
+          <input type="checkbox" id="outros" name="fonte" value="outros" />
+          <label for="outros">Outros</label>
+          <p>Renda média mensal (salário mínimo)</p>
+          <select id="renda" name="renda">
+            <option value="ate3">até 3</option>
+            <option value="3a10">de 3 a 10</option>
+            <option value="acima10">acima de 10</option>
+            <option value="sem">sem renda</option>
           </select>
-        </form>
-        <form>
-          <label for="textarea">
+          <label for="descricao">
             <p>Descrição</p>
           </label>
-          <textarea id="textarea" name="textarea" rows="4" cols="50"></textarea>
+          <textarea id="descricao" name="descricao" rows="4" cols="50"></textarea>
+          <button type="submit">Atualizar</button>
         </form>
       </section>
     </main>
