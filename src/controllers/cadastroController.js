@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
+const usuarios = require('../../usuarios.json');
 
 const usuarioJson = path.join('usuarios.json');
 const cadastroController = {
@@ -9,13 +10,24 @@ const cadastroController = {
       styles: ['cadastro'],
     });
   },
+
   salvarForm: (req, res) => {
     const { nome, email, senha } = req.body;
+
+    const usuarioJaExiste = usuarios.find((pessoa) => pessoa.email === email);
+    if (usuarioJaExiste) {
+      return res.status(400).json({ message: 'Usuário já existe' });
+    }
+
     const senhaCryp = bcrypt.hashSync(senha, 8);
-    const usuario = JSON.stringify([{ nome, email, senha: senhaCryp }]);
+
+    usuarios.push({ nome, email, senha: senhaCryp });
+
+    const usuario = JSON.stringify(usuarios);
 
     fs.writeFileSync(usuarioJson, usuario);
-    res.send('Cadastrado com sucesso');
+
+    return res.send('Usuário cadastrado com sucesso');
   },
 };
 
