@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require('express-session');
 
 const indexRouter = require('./src/routes/index');
 const cadastroRouter = require('./src/routes/cadastro');
@@ -17,6 +18,12 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
+
+app.use(session({
+  secret: 'pj7xBF2@%QyZ!8m',
+  resave: true,
+  saveUninitialized: true,
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
