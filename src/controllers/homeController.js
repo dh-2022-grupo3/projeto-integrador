@@ -1,5 +1,8 @@
+const fs = require('fs');
+const path = require('path');
 const User = require('../javascripts/user');
 const Transaction = require('../javascripts/transaction');
+const transacoes = require('../../transacoes.json');
 
 const homeController = {
   index: (req, res) => {
@@ -33,6 +36,15 @@ const homeController = {
       },
       title: 'Home',
     });
+  },
+
+  salvarTransacao: (req, res) => {
+    const { value, description, date } = req.body;
+
+    transacoes.push({ value, description, date });
+    fs.writeFileSync(path.join('transacoes.json'), JSON.stringify(transacoes));
+
+    return res.send('Transacao cadastrada com sucesso');
   },
 };
 
