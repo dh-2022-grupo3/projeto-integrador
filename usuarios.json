@@ -3,5 +3,15 @@
     "nome": "jose",
     "email": "js@teste.com",
     "senha": "$2a$08$/hQfOLACKBH0qKSSFIwsy.DWvYaBXJnn1HOodqrGOHPXc6ips6HSm"
+  },
+  {
+    "nome": "joão",
+    "email": "j@teste.com",
+    "senha": "$2a$08$NJiNviX5TOC.edSm26TLSe5o5Uc.9rOFSoActMoSbWvJWxakC8YrG"
+  },
+  {
+    "nome": "maria",
+    "email": "m@teste.com",
+    "senha": "$2a$08$DQuAZW1kPc7qTrwu/24MnedYg2OcTMQScl8mTUYq6SZVx3w1PI0q6"
   }
 ]
