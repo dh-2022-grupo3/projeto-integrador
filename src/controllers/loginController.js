@@ -12,7 +12,6 @@ const loginController = {
     const { email, senha } = req.body;
 
     const usuarioEncontrado = usuarios.find((usuario) => usuario.email === email);
-    // console.log(usuarioEncontrado);
 
     if (!usuarioEncontrado) {
       return res.status(401).json({ message: 'E-mail inválido' });
