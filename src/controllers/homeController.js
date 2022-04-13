@@ -44,7 +44,7 @@ const homeController = {
     transacoes.push({ value, description, date });
     fs.writeFileSync(path.join('transacoes.json'), JSON.stringify(transacoes));
 
-    return res.send('Transacao cadastrada com sucesso');
+    return res.redirect('/home');
   },
 };
 

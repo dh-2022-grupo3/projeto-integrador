@@ -27,7 +27,7 @@ const cadastroController = {
 
     fs.writeFileSync(usuarioJson, usuario);
 
-    return res.send('Usuário cadastrado com sucesso');
+    return res.redirect('/cadastro');
   },
 };
 

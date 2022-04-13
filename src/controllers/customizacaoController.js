@@ -26,7 +26,7 @@ const customizacaoController = {
 
     fs.writeFileSync(path.join('customizacao.json'), JSON.stringify(customizacao));
 
-    return res.send('Usuário modificado com sucesso');
+    return res.redirect('/customizacao');
   },
 };
 
