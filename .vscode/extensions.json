@@ -1,8 +1,3 @@
 {
-  "recommendations": [
-    "christian-kohler.path-intellisense",
-    "dbaeumer.vscode-eslint",
-    "ecmel.vscode-html-css",
-    "HookyQR.beautify",
-  ]
+  "recommendations": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
 }

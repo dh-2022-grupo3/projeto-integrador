@@ -30,7 +30,8 @@ h1 {
   margin-bottom: 20px;
 }
 
-.forgot input[type="email"], input[type="password"] {
+.forgot input[type="email"],
+input[type="password"] {
   border: none;
   border-bottom: 1px solid #fff;
   background: transparent;

@@ -1,8 +1,11 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   font: var(--font-body-1);
   letter-spacing: var(--spacing-body-1);
   height: 100%;
@@ -43,8 +46,10 @@ button {
   letter-spacing: var(--spacing-button);
 }
 
-figcaption, caption,
-label, legend {
+figcaption,
+caption,
+label,
+legend {
   font: var(--font-caption);
   letter-spacing: var(--spacing-caption);
 }

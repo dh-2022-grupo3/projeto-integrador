@@ -3,11 +3,7 @@
     "nome": "132421",
     "sobrenome": "2134123",
     "escolaridade": "superior",
-    "fonte": [
-      "empregado",
-      "empregador",
-      "outros"
-    ],
+    "fonte": ["empregado", "empregador", "outros"],
     "renda": "sem",
     "descricao": "ertwgtwrtewrtewrt"
   }

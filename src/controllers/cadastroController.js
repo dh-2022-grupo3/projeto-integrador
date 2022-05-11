@@ -1,13 +1,13 @@
-const fs = require('fs');
-const path = require('path');
-const bcrypt = require('bcryptjs');
-const usuarios = require('../../usuarios.json');
+const fs = require("fs");
+const path = require("path");
+const bcrypt = require("bcryptjs");
+const usuarios = require("../../usuarios.json");
 
-const usuarioJson = path.join('usuarios.json');
+const usuarioJson = path.join("usuarios.json");
 const cadastroController = {
   index: (req, res) => {
-    res.render('cadastro', {
-      styles: ['cadastro'],
+    res.render("cadastro", {
+      styles: ["cadastro"],
     });
   },
 
@@ -16,7 +16,7 @@ const cadastroController = {
 
     const usuarioJaExiste = usuarios.find((pessoa) => pessoa.email === email);
     if (usuarioJaExiste) {
-      return res.status(400).json({ message: 'Usuário já existe' });
+      return res.status(400).json({ message: "Usuário já existe" });
     }
 
     const senhaCryp = bcrypt.hashSync(senha, 8);
@@ -27,7 +27,7 @@ const cadastroController = {
 
     fs.writeFileSync(usuarioJson, usuario);
 
-    return res.send('Usuário cadastrado com sucesso');
+    return res.send("Usuário cadastrado com sucesso");
   },
 };
 

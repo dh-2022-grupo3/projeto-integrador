@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.createTable('movimentacao', {
+    return queryInterface.createTable("movimentacao", {
       id: {
         type: Sequelize.DataTypes.INTEGER,
         primaryKey: true,
@@ -29,6 +29,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.dropTable('movimentacao');
+    return queryInterface.dropTable("movimentacao");
   },
 };

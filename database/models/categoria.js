@@ -1,11 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-import { Sequelize, DataTypes } from 'sequelize/types';
-
-/**
- *
- * @param {Sequelize} sequelize
- * @param {DataTypes} dataTypes
- */
 module.exports = (sequelize, dataTypes) => {
   const tableDefinitions = {
     id: {
@@ -18,10 +10,14 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const tableConfiguration = {
-    tableName: 'categoria',
+    tableName: "categoria",
     timestamps: false,
   };
 
-  const categoria = sequelize.define('categoria', tableDefinitions, tableConfiguration);
+  const categoria = sequelize.define(
+    "categoria",
+    tableDefinitions,
+    tableConfiguration
+  );
   return categoria;
 };

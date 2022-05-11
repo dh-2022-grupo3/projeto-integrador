@@ -3,7 +3,7 @@ body {
   flex-direction: row;
 }
 
-body>div {
+body > div {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -99,11 +99,11 @@ main {
   align-items: center;
 }
 
-.bank-info>div {
+.bank-info > div {
   font: var(--font-headline-6);
 }
 
-.bank-info>div span {
+.bank-info > div span {
   vertical-align: sub;
 }
 

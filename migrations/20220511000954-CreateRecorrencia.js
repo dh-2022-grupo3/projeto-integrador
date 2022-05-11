@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    return queryInterface.createTable('recorrencia', {
+    return queryInterface.createTable("recorrencia", {
       id: {
         type: Sequelize.DataTypes.INTEGER,
         primaryKey: true,
@@ -14,7 +14,7 @@ module.exports = {
         type: Sequelize.DataTypes.DATE,
       },
       recorrencia: {
-        type: Sequelize.DataTypes.ENUM('dia', 'semana', 'mes'),
+        type: Sequelize.DataTypes.ENUM("dia", "semana", "mes"),
       },
       periodicidade: {
         type: Sequelize.DataTypes.TINYINT,
@@ -23,6 +23,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    return queryInterface.dropTable('recorrencia');
+    return queryInterface.dropTable("recorrencia");
   },
 };

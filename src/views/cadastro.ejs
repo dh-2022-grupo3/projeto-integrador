@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include('./partials/head') %>
 
-<%- include('./partials/head') %>
+  <body>
+    <div class="container">
+      <!--Primeira coluna-->
+      <div class="primeira-coluna">
+        <h2 class="title">Criar sua conta</h2>
+        <form action="" method="post" class="form">
+          <input type="text" name="nome" placeholder="Nome" />
+          <input type="email" name="email" placeholder="E-mail" />
+          <input type="password" name="senha" placeholder="Senha" />
 
-<body>
+          <button class="btn">Cadastre-se</button>
 
-  <div class="container">
-    <!--Primeira coluna-->
-    <div class="primeira-coluna">
-      <h2 class="title">Criar sua conta</h2>
-      <form action="" method="post"
-            class="form">
-        <input type="text" name="nome" placeholder="Nome">
-        <input type="email" name="email" placeholder="E-mail">
-        <input type="password" name="senha" placeholder="Senha">
-
-        <button class="btn">Cadastre-se</button>
-
-        <div>
-          <ul class="lista-sociais">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Google+</a></li>
-          </ul>
-
-        </div>
-        <p class="descricao">
-          Ao clicar em cadastre-se você está de acordo com os termos de uso = políticas de privacidade
-        </p>
-
-      </form>
+          <div>
+            <ul class="lista-sociais">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Google+</a></li>
+            </ul>
+          </div>
+          <p class="descricao">
+            Ao clicar em cadastre-se você está de acordo com os termos de uso =
+            políticas de privacidade
+          </p>
+        </form>
+      </div>
     </div>
-
-  </div>
-</body>
-
+  </body>
 </html>
