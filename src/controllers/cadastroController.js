@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcryptjs");
 const usuarios = require("../../usuarios.json");
+const { usuario } = require("../../database/models");
 
 const usuarioJson = path.join("usuarios.json");
 const cadastroController = {
@@ -23,9 +24,9 @@ const cadastroController = {
 
     usuarios.push({ nome, email, senha: senhaCryp });
 
-    const usuario = JSON.stringify(usuarios);
+    const usuarioString = JSON.stringify(usuarios);
 
-    fs.writeFileSync(usuarioJson, usuario);
+    fs.writeFileSync(usuarioJson, usuarioString);
 
     return res.send("Usuário cadastrado com sucesso");
   },
