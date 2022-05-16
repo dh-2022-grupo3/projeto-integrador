@@ -1,7 +1,5 @@
-const fs = require("fs");
-const path = require("path");
 const User = require("../javascripts/user");
-const customizacao = require("../../customizacao.json");
+const { Customizacao } = require("../database/models");
 
 const customizacaoController = {
   index: (req, res) => {
@@ -12,10 +10,10 @@ const customizacaoController = {
     });
   },
 
-  salvarCusotmizacao: (req, res) => {
+  salvarCusotmizacao: async (req, res) => {
     const { nome, sobrenome, escolaridade, fonte, renda, descricao } = req.body;
 
-    customizacao.push({
+    await Customizacao.create({
       nome,
       sobrenome,
       escolaridade,
@@ -24,12 +22,7 @@ const customizacaoController = {
       descricao,
     });
 
-    fs.writeFileSync(
-      path.join("customizacao.json"),
-      JSON.stringify(customizacao)
-    );
-
-    return res.send("Usuário modificado com sucesso");
+    return res.redirect("/customizacao");
   },
 };
 
