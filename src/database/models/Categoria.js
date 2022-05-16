@@ -11,11 +11,11 @@ module.exports = (sequelize, dataTypes) => {
 
   const tableConfiguration = {
     tableName: "categoria",
-    timestamps: false,
+    timestamps: true,
   };
 
   const categoria = sequelize.define(
-    "categoria",
+    "Categoria",
     tableDefinitions,
     tableConfiguration
   );

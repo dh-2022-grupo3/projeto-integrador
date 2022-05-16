@@ -14,9 +14,9 @@ module.exports = (sequelize, dataTypes) => {
 
   const tableConfiguration = {
     tableName: "tag",
-    timestamps: false,
+    timestamps: true,
   };
 
-  const tag = sequelize.define("tag", tableDefinitions, tableConfiguration);
+  const tag = sequelize.define("Tag", tableDefinitions, tableConfiguration);
   return tag;
 };

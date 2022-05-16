@@ -10,11 +10,11 @@ module.exports = (sequelize, dataTypes) => {
 
   const tableConfiguration = {
     tableName: "movimentacao_tag",
-    timestamps: false,
+    timestamps: true,
   };
 
   const movimentacaoTag = sequelize.define(
-    "movimentacao_tag",
+    "MovimentacaoTag",
     tableDefinitions,
     tableConfiguration
   );

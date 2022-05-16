@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const recorrencia = sequelize.define(
-    "recorrencia",
+    "Recorrencia",
     tableDefinitions,
     tableConfiguration
   );

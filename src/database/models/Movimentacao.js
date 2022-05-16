@@ -26,11 +26,11 @@ module.exports = (sequelize, dataTypes) => {
 
   const tableConfiguration = {
     tableName: "movimentacao",
-    timestamps: false,
+    timestamps: true,
   };
 
   const movimentacao = sequelize.define(
-    "movimentacao",
+    "Movimentacao",
     tableDefinitions,
     tableConfiguration
   );

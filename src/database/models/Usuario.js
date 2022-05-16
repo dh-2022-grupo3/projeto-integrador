@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
   };
 
   const usuario = sequelize.define(
-    "usuario",
+    "Usuario",
     tableDefinitions,
     tableConfiguration
   );
