@@ -1,4 +1,4 @@
-const usuarios = require("../../usuarios.json");
+const { Usuario } = require("../database/models");
 const bcrypt = require("bcryptjs");
 
 const loginController = {
@@ -7,14 +7,12 @@ const loginController = {
       styles: ["login"],
     });
   },
-  logarUsuario: (req, res) => {
+  logarUsuario: async (req, res) => {
     const { email, senha } = req.body;
 
-    const usuarioEncontrado = usuarios.find(
-      (usuario) => usuario.email === email
-    );
+    const usuarioEncontrado = await Usuario.findOne({ where: { email } });
 
-    if (!usuarioEncontrado) {
+    if (usuarioEncontrado == null) {
       return res.status(401).json({ message: "E-mail inválido" });
     }
 
