@@ -7,26 +7,17 @@ module.exports = (sequelize, dataTypes) => {
     nome: {
       type: dataTypes.STRING,
     },
-    sobrenome: {
-      type: dataTypes.STRING,
-    },
-    email: {
-      type: dataTypes.STRING,
-    },
-    senha: {
-      type: dataTypes.STRING,
-    },
   };
 
   const tableConfiguration = {
-    tableName: "usuario",
+    tableName: "fonte_renda",
     timestamps: true,
   };
 
-  const usuario = sequelize.define(
-    "Usuario",
+  const fonteRenda = sequelize.define(
+    "FonteRenda",
     tableDefinitions,
     tableConfiguration
   );
-  return usuario;
+  return fonteRenda;
 };

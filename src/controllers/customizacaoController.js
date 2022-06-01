@@ -1,8 +1,10 @@
 const User = require("../javascripts/user");
-const { Customizacao } = require("../database/models");
+const { Usuario } = require("../database/models");
 
 const customizacaoController = {
   index: (req, res) => {
+    req.session.usuario;
+
     res.render("customizacao", {
       styles: ["customizacao"],
       user,
