@@ -1,7 +1,7 @@
 const forgotController = {
   index: (req, res) => {
-    res.render('forgot', {
-      styles: ['forgot'],
+    res.render("forgot", {
+      styles: ["forgot"],
     });
   },
 };

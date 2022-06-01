@@ -1,35 +1,33 @@
-const fs = require('fs');
-const path = require('path');
-const User = require('../javascripts/user');
-const customizacao = require('../../customizacao.json');
+const User = require("../javascripts/user");
+const { Usuario } = require("../database/models");
 
 const customizacaoController = {
   index: (req, res) => {
-    res.render('customizacao', {
-      styles: ['customizacao'],
+    req.session.usuario;
+
+    res.render("customizacao", {
+      styles: ["customizacao"],
       user,
-      title: 'Customização',
+      title: "Customização",
     });
   },
 
-  salvarCusotmizacao: (req, res) => {
-    const {
+  salvarCusotmizacao: async (req, res) => {
+    const { nome, sobrenome, escolaridade, fonte, renda, descricao } = req.body;
+
+    await Customizacao.create({
       nome,
       sobrenome,
       escolaridade,
       fonte,
       renda,
       descricao,
-    } = req.body;
+    });
 
-    customizacao.push({ nome, sobrenome, escolaridade, fonte, renda, descricao });
-
-    fs.writeFileSync(path.join('customizacao.json'), JSON.stringify(customizacao));
-
-    return res.send('Usuário modificado com sucesso');
+    return res.redirect("/customizacao");
   },
 };
 
-const user = new User('1', 'Nome Sobrenome', 'nome@nome.nome', 5000);
+const user = new User("1", "Nome Sobrenome", "nome@nome.nome", 5000);
 
 module.exports = customizacaoController;

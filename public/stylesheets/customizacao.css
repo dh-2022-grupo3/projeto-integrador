@@ -3,7 +3,7 @@ body {
   flex-direction: row;
 }
 
-body>div {
+body > div {
   display: flex;
   flex-direction: column;
   width: 100%;

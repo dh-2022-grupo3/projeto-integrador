@@ -1,64 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <% styles.push('header', 'navigation') %> <%- include('./partials/head') %>
 
-<% styles.push('header', 'navigation') %>
-<%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/navigation') %>
+    <div>
+      <%- include('./partials/header') %>
+      <main>
+        <section id="desktop">
+          <form action="" method="post">
+            <label for="nome">Nome:</label><br />
+            <input type="text" id="nome" name="nome" /><br />
+            <label for="sobrenome">Sobrenome:</label><br />
+            <input type="text" id="sobrenome" name="sobrenome" />
 
-<body>
-  <%- include('./partials/navigation') %>
-  <div>
-    <%- include('./partials/header') %>
-    <main>
-      <section id="menuLeft">
-        <section class="card">
-          <h3>Dados Pessoais</h3>
-        </section>
-        <section class="card">
-          <h3>Configurações</h3>
-        </section>
-        <section class="card">
-          <h3>Preferências</h3>
-        </section>
-        <section class="card">
-          <h3>Interesses</h3>
-        </section>
-      </section>
-      <section id="desktop">
-        <form action="" method="post">
-          <label for="nome">Nome:</label><br />
-          <input type="text" id="nome" name="nome" /><br />
-          <label for="sobrenome">Sobrenome:</label><br />
-          <input type="text" id="sobrenome" name="sobrenome" />
-          <p>Escolaridade</p>
-          <input type="radio" id="medio" name="escolaridade" value="medio" />
-          <label for="medio">Ensino médio</label><br />
-          <input type="radio" id="superior" name="escolaridade" value="superior" />
-          <label for="superior">Ensino Superior</label><br />
-          <input type="radio" id="graduado" name="escolaridade" value="graduado" />
-          <label for="graduado">Pós Graduado</label>
-          <p>Fonte de Renda</p>
-          <input type="checkbox" id="empregado" name="fonte" value="empregado" />
-          <label for="empregado">Empregado</label><br />
-          <input type="checkbox" id="empregador" name="fonte" value="empregador" />
-          <label for="empregador">Empregador</label><br />
-          <input type="checkbox" id="outros" name="fonte" value="outros" />
-          <label for="outros">Outros</label>
-          <p>Renda média mensal (salário mínimo)</p>
-          <select id="renda" name="renda">
-            <option value="ate3">até 3</option>
-            <option value="3a10">de 3 a 10</option>
-            <option value="acima10">acima de 10</option>
-            <option value="sem">sem renda</option>
-          </select>
-          <label for="descricao">
-            <p>Descrição</p>
-          </label>
-          <textarea id="descricao" name="descricao" rows="4" cols="50"></textarea>
-          <button type="submit">Atualizar</button>
-        </form>
-      </section>
-    </main>
-  </div>
-</body>
+            <p>Fonte de Renda</p>
+            <input
+              type="checkbox"
+              id="mesada"
+              name="fonte-renda"
+              value="mesada"
+            />
+            <label for="mesada">Mesada</label><br />
+            <input
+              type="checkbox"
+              id="freela"
+              name="fonte-renda"
+              value="freela"
+            />
+            <label for="freela">Freela</label><br />
+            <input
+              type="checkbox"
+              id="emprego"
+              name="fonte-renda"
+              value="emprego"
+            />
+            <label for="emprego">Emprego</label><br />
+            <input
+              type="checkbox"
+              id="outros"
+              name="fonte-renda"
+              value="outros"
+            />
+            <label for="outros">Outros</label>
 
+            <br />
+            <button type="submit">Atualizar</button>
+          </form>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

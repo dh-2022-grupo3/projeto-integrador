@@ -1,28 +1,29 @@
-const fs = require('fs');
-const path = require('path');
-const User = require('../javascripts/user');
-const Transaction = require('../javascripts/transaction');
-const transacoes = require('../../transacoes.json');
+const User = require("../javascripts/user");
+const Transaction = require("../javascripts/transaction");
+const { Transacoes } = require("../database/models");
 
 const homeController = {
   index: (req, res) => {
-    const user = new User('1', 'Nome Sobrenome', 'nome@nome.nome', 5000);
+    const user = new User("1", "Nome Sobrenome", "nome@nome.nome", 5000);
     const transactions = [
-      new Transaction('1', 1000, 'Salario', new Date(2022, 0, 1, 6)),
-      new Transaction('2', -10, 'Uber', new Date(2022, 0, 1, 6)),
-      new Transaction('3', -50, 'Ifood', new Date(2022, 0, 1, 6)),
+      new Transaction("1", 1000, "Salario", new Date(2022, 0, 1, 6)),
+      new Transaction("2", -10, "Uber", new Date(2022, 0, 1, 6)),
+      new Transaction("3", -50, "Ifood", new Date(2022, 0, 1, 6)),
     ];
     const total = transactions.reduce((prev, curr) => prev + curr.value, 0);
 
     const futureTransactions = [
-      new Transaction('1', 1000, 'Salario', new Date(2022, 1, 1, 6)),
-      new Transaction('2', -10, 'Uber', new Date(2022, 1, 1, 6)),
-      new Transaction('3', -5000, 'Ifood', new Date(2022, 1, 1, 6)),
+      new Transaction("1", 1000, "Salario", new Date(2022, 1, 1, 6)),
+      new Transaction("2", -10, "Uber", new Date(2022, 1, 1, 6)),
+      new Transaction("3", -5000, "Ifood", new Date(2022, 1, 1, 6)),
     ];
-    const futureTotal = futureTransactions.reduce((prev, curr) => prev + curr.value, 0);
+    const futureTotal = futureTransactions.reduce(
+      (prev, curr) => prev + curr.value,
+      0
+    );
 
-    res.render('home', {
-      styles: ['home'],
+    res.render("home", {
+      styles: ["home"],
       user,
       table: {
         transactions,
@@ -34,17 +35,16 @@ const homeController = {
         total: futureTotal,
         totalParsed: `R$ ${Math.abs(futureTotal)}`,
       },
-      title: 'Home',
+      title: "Home",
     });
   },
 
-  salvarTransacao: (req, res) => {
+  salvarTransacao: async (req, res) => {
     const { value, description, date } = req.body;
 
-    transacoes.push({ value, description, date });
-    fs.writeFileSync(path.join('transacoes.json'), JSON.stringify(transacoes));
+    await Transacoes.create({ value, description, date });
 
-    return res.send('Transacao cadastrada com sucesso');
+    return res.send("Transacao cadastrada com sucesso");
   },
 };
 
