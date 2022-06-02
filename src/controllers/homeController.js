@@ -36,6 +36,7 @@ const homeController = {
         totalParsed: `R$ ${Math.abs(futureTotal)}`,
       },
       title: "Home",
+      name: req.session.usuario.nome,
     });
   },
 

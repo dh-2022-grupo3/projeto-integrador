@@ -3,12 +3,11 @@ const { Usuario } = require("../database/models");
 
 const customizacaoController = {
   index: (req, res) => {
-    req.session.usuario;
-
     res.render("customizacao", {
       styles: ["customizacao"],
       user,
       title: "Customização",
+      name: req.session.usuario.nome,
     });
   },
 

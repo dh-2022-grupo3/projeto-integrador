@@ -22,6 +22,7 @@ const chartController = {
       styles: ["chart"],
       dados,
       title: "Análise",
+      name: req.session.usuario.nome
     });
   },
 };
