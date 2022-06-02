@@ -37,6 +37,7 @@ const homeController = {
       },
       title: "Home",
       name: req.session.usuario.nome,
+      balanco: req.session.usuario.balanco,
     });
   },
 

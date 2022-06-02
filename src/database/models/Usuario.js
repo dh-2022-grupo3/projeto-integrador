@@ -16,6 +16,9 @@ module.exports = (sequelize, dataTypes) => {
     senha: {
       type: dataTypes.STRING,
     },
+    balanco: {
+      type: dataTypes.DECIMAL(10, 2),
+    },
   };
 
   const tableConfiguration = {
