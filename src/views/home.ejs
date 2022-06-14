@@ -23,6 +23,17 @@
             <form action="" method="post">
               <label>Valor <input type="text" name="value" /></label>
               <label>Descrição <input type="text" name="description" /></label>
+              <label>Categoria </label>
+              <% categorias.forEach(categoria => { %>
+              <div>
+                <input type="radio" name="categoria" value="<%= categoria.id %>"
+                id="cat-<%= categoria.id %>" <%= categoria.id===1?"checked":""%>
+                />
+                <label for="cat-<%=categoria.id %>"
+                  ><%= categoria.nome %>
+                </label>
+              </div>
+              <% }) %>
               <label>Data <input type="datetime-local" name="date" /></label>
               <input type="submit" value="Cadastrar" />
             </form>

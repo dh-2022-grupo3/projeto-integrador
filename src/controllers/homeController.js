@@ -1,9 +1,9 @@
 const User = require("../javascripts/user");
 const Transaction = require("../javascripts/transaction");
-const { Transacoes } = require("../database/models");
+const { Categoria, Movimentacao } = require("../database/models");
 
 const homeController = {
-  index: (req, res) => {
+  index: async (req, res) => {
     const user = new User("1", "Nome Sobrenome", "nome@nome.nome", 5000);
     const transactions = [
       new Transaction("1", 1000, "Salario", new Date(2022, 0, 1, 6)),
@@ -22,6 +22,8 @@ const homeController = {
       0
     );
 
+    const categorias = await Categoria.findAll({ raw: true });
+
     res.render("home", {
       styles: ["home"],
       user,
@@ -38,13 +40,20 @@ const homeController = {
       title: "Home",
       name: req.session.usuario.nome,
       balanco: req.session.usuario.balanco,
+      categorias,
     });
   },
 
   salvarTransacao: async (req, res) => {
-    const { value, description, date } = req.body;
+    const { value, description, date, categoria } = req.body;
 
-    await Transacoes.create({ value, description, date });
+    await Movimentacao.create({
+      descricao: description,
+      valor: value,
+      data: date,
+      id_categoria: categoria,
+      id_usuario: req.session.usuario.id,
+    });
 
     return res.send("Transacao cadastrada com sucesso");
   },
