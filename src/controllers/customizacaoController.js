@@ -1,4 +1,3 @@
-const User = require("../javascripts/user");
 const { Usuario } = require("../database/models");
 
 const customizacaoController = {
@@ -26,7 +25,5 @@ const customizacaoController = {
     return res.redirect("/customizacao");
   },
 };
-
-const user = new User("1", "Nome Sobrenome", "nome@nome.nome", 5000);
 
 module.exports = customizacaoController;

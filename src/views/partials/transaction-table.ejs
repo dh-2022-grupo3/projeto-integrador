@@ -9,10 +9,10 @@
   <tbody>
     <% table.transactions.forEach(transaction => { %>
     <tr>
-      <th scope="row"><%= transaction.dateParsed %></th>
-      <td><%= transaction.description %></td>
-      <td class="<%= transaction.value < 0 ? 'negative' : '' %>">
-        <%= transaction.valueParsed %>
+      <th scope="row"><%= transaction.dataParsed %></th>
+      <td><%= transaction.descricao %></td>
+      <td class="<%= transaction.valor < 0 ? 'negative' : '' %>">
+        <%= transaction.valor %>
       </td>
     </tr>
     <% }) %>

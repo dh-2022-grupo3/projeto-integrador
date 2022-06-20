@@ -1,41 +1,37 @@
-const User = require("../javascripts/user");
-const Transaction = require("../javascripts/transaction");
 const { Categoria, Movimentacao } = require("../database/models");
 
 const homeController = {
   index: async (req, res) => {
-    const user = new User("1", "Nome Sobrenome", "nome@nome.nome", 5000);
-    const transactions = [
-      new Transaction("1", 1000, "Salario", new Date(2022, 0, 1, 6)),
-      new Transaction("2", -10, "Uber", new Date(2022, 0, 1, 6)),
-      new Transaction("3", -50, "Ifood", new Date(2022, 0, 1, 6)),
-    ];
-    const total = transactions.reduce((prev, curr) => prev + curr.value, 0);
+    const movimentacoes = await Movimentacao.findAll({
+      where: {
+        id_usuario: req.session.usuario.id,
+      },
+      raw: true,
+    });
 
-    const futureTransactions = [
-      new Transaction("1", 1000, "Salario", new Date(2022, 1, 1, 6)),
-      new Transaction("2", -10, "Uber", new Date(2022, 1, 1, 6)),
-      new Transaction("3", -5000, "Ifood", new Date(2022, 1, 1, 6)),
-    ];
-    const futureTotal = futureTransactions.reduce(
-      (prev, curr) => prev + curr.value,
-      0
-    );
+    movimentacoes.forEach((movimentacao) => {
+      movimentacao.dataParsed = new Date(movimentacao.data).toLocaleString(
+        "pt-BR",
+        {
+          dateStyle: "short",
+          timeStyle: "short",
+        }
+      );
+    });
 
     const categorias = await Categoria.findAll({ raw: true });
 
     res.render("home", {
       styles: ["home"],
-      user,
       table: {
-        transactions,
-        total,
-        totalParsed: `R$ ${Math.abs(total)}`,
+        transactions: movimentacoes,
+        total: 1000,
+        totalParsed: `R$ ${Math.abs(1000)}`,
       },
       futureTable: {
-        transactions: futureTransactions,
-        total: futureTotal,
-        totalParsed: `R$ ${Math.abs(futureTotal)}`,
+        transactions: movimentacoes,
+        total: 2000,
+        totalParsed: `R$ ${Math.abs(2000)}`,
       },
       title: "Home",
       name: req.session.usuario.nome,
