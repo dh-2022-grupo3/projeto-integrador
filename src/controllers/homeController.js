@@ -15,13 +15,20 @@ const homeController = {
       agora.getFullYear(),
       agora.getMonth() + 1
     );
+    const total = movimentacoes
+      .reduce((anterior, atual) => {
+        console.log(anterior);
+        console.log(atual);
+        return anterior + +atual.valor;
+      }, 0)
+      .toFixed(2);
 
     res.render("home", {
       styles: ["home"],
       table: {
         transactions: movimentacoes,
-        total: 1000,
-        totalParsed: `R$ ${Math.abs(1000)}`,
+        total,
+        totalParsed: `R$ ${Math.abs(total)}`,
       },
       futureTable: {
         transactions: movimentacoesFutura,
