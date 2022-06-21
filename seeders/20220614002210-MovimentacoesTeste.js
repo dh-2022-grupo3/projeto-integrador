@@ -9,8 +9,17 @@ module.exports = {
     const id_usuario = userTest[0].id;
     await queryInterface.bulkInsert("movimentacao", [
       {
+        descricao: "Salario",
+        valor: 3500.0,
+        data: new Date(),
+        id_categoria: 4,
+        id_usuario,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
         descricao: "Uber",
-        valor: 40.5,
+        valor: -40.5,
         data: new Date(),
         id_categoria: 4,
         id_usuario,
@@ -19,7 +28,7 @@ module.exports = {
       },
       {
         descricao: "Convênio",
-        valor: 600.8,
+        valor: -600.8,
         data: new Date(),
         id_categoria: 2,
         id_usuario,
@@ -28,7 +37,7 @@ module.exports = {
       },
       {
         descricao: "Faculdade",
-        valor: 1800.0,
+        valor: -1800.0,
         data: new Date(),
         id_categoria: 3,
         id_usuario,
@@ -37,7 +46,7 @@ module.exports = {
       },
       {
         descricao: "Show",
-        valor: 120.0,
+        valor: -120.0,
         data: new Date(),
         id_categoria: 5,
         id_usuario,
@@ -46,9 +55,36 @@ module.exports = {
       },
       {
         descricao: "Ifood",
-        valor: 85.0,
+        valor: -85.0,
         data: new Date(),
         id_categoria: 6,
+        id_usuario,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        descricao: "Cinema",
+        valor: -30.5,
+        data: new Date(2022, 6, 15),
+        id_categoria: 4,
+        id_usuario,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        descricao: "Remédios",
+        valor: -120.0,
+        data: new Date(2022, 6, 3),
+        id_categoria: 4,
+        id_usuario,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        descricao: "Livros de matemática",
+        valor: -330.0,
+        data: new Date(2022, 6, 3),
+        id_categoria: 4,
         id_usuario,
         createdAt: new Date(),
         updatedAt: new Date(),

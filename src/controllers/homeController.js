@@ -1,25 +1,10 @@
+const { Op } = require("sequelize");
 const { Categoria, Movimentacao } = require("../database/models");
 
 const homeController = {
   index: async (req, res) => {
-    const movimentacoes = await Movimentacao.findAll({
-      where: {
-        id_usuario: req.session.usuario.id,
-      },
-      raw: true,
-    });
-
-    movimentacoes.forEach((movimentacao) => {
-      movimentacao.dataParsed = new Date(movimentacao.data).toLocaleString(
-        "pt-BR",
-        {
-          dateStyle: "short",
-          timeStyle: "short",
-        }
-      );
-    });
-
     const categorias = await Categoria.findAll({ raw: true });
+    const movimentacoes = await criarTabelaMovimentacao(req.session.usuario.id);
 
     res.render("home", {
       styles: ["home"],
@@ -54,5 +39,31 @@ const homeController = {
     return res.send("Transacao cadastrada com sucesso");
   },
 };
+
+// eslint-disable-next-line camelcase
+async function criarTabelaMovimentacao(id_usuario) {
+  const agora = new Date();
+  const inicioMes = new Date(agora.getFullYear(), agora.getMonth(), 1);
+  const fimMes = new Date(agora.getFullYear(), agora.getMonth() + 1, 0);
+  const movimentacoes = await Movimentacao.findAll({
+    where: {
+      id_usuario,
+      data: { [Op.between]: [inicioMes, fimMes] },
+    },
+    raw: true,
+  });
+
+  movimentacoes.forEach((movimentacao) => {
+    movimentacao.dataParsed = new Date(movimentacao.data).toLocaleString(
+      "pt-BR",
+      {
+        dateStyle: "short",
+        timeStyle: "short",
+      }
+    );
+  });
+
+  return movimentacoes;
+}
 
 module.exports = homeController;
