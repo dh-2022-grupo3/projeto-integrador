@@ -54,7 +54,7 @@ const homeController = {
 // eslint-disable-next-line camelcase
 async function criarTabelaMovimentacao(id_usuario, ano, mes) {
   const inicioMes = new Date(ano, mes, 1);
-  const fimMes = new Date(ano, mes + 1, 0);
+  const fimMes = new Date(ano, +mes + 1, 0);
   const movimentacoes = await Movimentacao.findAll({
     where: {
       id_usuario,
