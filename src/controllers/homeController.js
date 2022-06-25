@@ -3,22 +3,21 @@ const { Categoria, Movimentacao } = require("../database/models");
 
 const homeController = {
   index: async (req, res) => {
+    if (req.query.ano == null) {
+      req.query.ano = new Date().getFullYear();
+    }
+    if (req.query.mes == null) {
+      req.query.mes = new Date().getMonth();
+    }
     const categorias = await Categoria.findAll({ raw: true });
-    const agora = new Date();
     const movimentacoes = await criarTabelaMovimentacao(
       req.session.usuario.id,
-      agora.getFullYear(),
-      agora.getMonth()
+      req.query.ano,
+      req.query.mes
     );
-    const movimentacoesFutura = await criarTabelaMovimentacao(
-      req.session.usuario.id,
-      agora.getFullYear(),
-      agora.getMonth() + 1
-    );
+
     const total = movimentacoes
       .reduce((anterior, atual) => {
-        console.log(anterior);
-        console.log(atual);
         return anterior + +atual.valor;
       }, 0)
       .toFixed(2);
@@ -29,11 +28,6 @@ const homeController = {
         transactions: movimentacoes,
         total,
         totalParsed: `R$ ${Math.abs(total)}`,
-      },
-      futureTable: {
-        transactions: movimentacoesFutura,
-        total: 2000,
-        totalParsed: `R$ ${Math.abs(2000)}`,
       },
       title: "Home",
       name: req.session.usuario.nome,

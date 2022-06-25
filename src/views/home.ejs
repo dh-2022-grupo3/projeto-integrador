@@ -42,20 +42,11 @@
         <section id="right-section">
           <section id="top-right-section">
             <div class="card">
-              <span class="font-subtitle-1">Esse mês</span>
+              <div>
+                <button id="anterior">Mês anterior</button>
+                <button id="proximo">Próximo mês</button>
+              </div>
               <%- include('./partials/transaction-table', {table}) %>
-            </div>
-            <div class="card">
-              <span class="font-subtitle-1">Próximo mês</span>
-              <%- include('./partials/transaction-table', {table: futureTable})
-              %>
-            </div>
-          </section>
-          <section id="bottom-right-section">
-            <div class="card">
-              <a href="/chart">
-                <canvas id="verticalBar"></canvas>
-              </a>
             </div>
           </section>
         </section>
@@ -63,6 +54,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    <script src="/javascripts/my_chart.js"></script>
+    <script src="/javascripts/home.js"></script>
   </body>
 </html>
