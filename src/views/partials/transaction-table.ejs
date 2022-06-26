@@ -5,6 +5,7 @@
       <th scope="col">Descrição</th>
       <th scope="col">Categoria</th>
       <th scope="col">Valor</th>
+      <th scope="col">Deletar</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +18,13 @@
       </td>
       <td class="<%= transaction.valor < 0 ? 'negative' : '' %>">
         <%= transaction.valor %>
+      </td>
+      <td>
+        <span
+          class="material-icons delete"
+          onclick="onDeleteClick(<%= transaction.id %>)"
+          >delete</span
+        >
       </td>
     </tr>
     <% }) %>

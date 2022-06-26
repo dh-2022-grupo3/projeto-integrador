@@ -49,6 +49,16 @@ const homeController = {
 
     return res.send("Transacao cadastrada com sucesso");
   },
+
+  deletarTransacao: async (req, res) => {
+    await Movimentacao.destroy({
+      where: {
+        id: req.body.id,
+      },
+    });
+
+    return res.sendStatus(200);
+  },
 };
 
 // eslint-disable-next-line camelcase
