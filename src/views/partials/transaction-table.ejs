@@ -3,6 +3,7 @@
     <tr class="font-subtitle-2">
       <th scope="col">Data</th>
       <th scope="col">Descrição</th>
+      <th scope="col">Categoria</th>
       <th scope="col">Valor</th>
     </tr>
   </thead>
@@ -11,6 +12,9 @@
     <tr>
       <th scope="row"><%= transaction.dataParsed %></th>
       <td><%= transaction.descricao %></td>
+      <td>
+        <%= categorias.find(c => c.id === transaction.id_categoria).nome %>
+      </td>
       <td class="<%= transaction.valor < 0 ? 'negative' : '' %>">
         <%= transaction.valor %>
       </td>
@@ -20,6 +24,7 @@
   <tfoot>
     <tr>
       <th scope="row" class="font-subtitle-2">Total</th>
+      <td></td>
       <td></td>
       <td class="<%= table.total < 0 ? 'negative' : '' %>">
         <%= table.totalParsed %>
