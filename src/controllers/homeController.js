@@ -3,11 +3,13 @@ const { Categoria, Movimentacao } = require("../database/models");
 
 const homeController = {
   index: async (req, res) => {
+    const now = new Date();
+
     if (req.query.ano == null) {
-      req.query.ano = new Date().getFullYear();
+      req.query.ano = now.getFullYear();
     }
     if (req.query.mes == null) {
-      req.query.mes = new Date().getMonth();
+      req.query.mes = now.getMonth();
     }
     const categorias = await Categoria.findAll({ raw: true });
     const movimentacoes = await criarTabelaMovimentacao(
@@ -21,6 +23,14 @@ const homeController = {
         return anterior + +atual.valor;
       }, 0)
       .toFixed(2);
+
+    const balanco = await Movimentacao.sum("valor", {
+      where: {
+        data: { [Op.lte]: now },
+      },
+    });
+
+    req.session.usuario.balanco = balanco.toFixed(2);
 
     res.render("home", {
       styles: ["home"],
