@@ -15,7 +15,7 @@
               <span class="font-subtitle-1">Balanço</span>
             </div>
             <div>
-              <span class="font-headline-6">R$ <%= user.balance %></span>
+              <span class="font-headline-6">R$ <%= balanco %></span>
             </div>
           </div>
           <div class="card">
@@ -23,6 +23,17 @@
             <form action="" method="post">
               <label>Valor <input type="text" name="value" /></label>
               <label>Descrição <input type="text" name="description" /></label>
+              <label>Categoria </label>
+              <% categorias.forEach(categoria => { %>
+              <div>
+                <input type="radio" name="categoria" value="<%= categoria.id %>"
+                id="cat-<%= categoria.id %>" <%= categoria.id===1?"checked":""%>
+                />
+                <label for="cat-<%=categoria.id %>"
+                  ><%= categoria.nome %>
+                </label>
+              </div>
+              <% }) %>
               <label>Data <input type="datetime-local" name="date" /></label>
               <input type="submit" value="Cadastrar" />
             </form>
@@ -31,20 +42,11 @@
         <section id="right-section">
           <section id="top-right-section">
             <div class="card">
-              <span class="font-subtitle-1">Esse mês</span>
+              <div>
+                <button id="anterior">Mês anterior</button>
+                <button id="proximo">Próximo mês</button>
+              </div>
               <%- include('./partials/transaction-table', {table}) %>
-            </div>
-            <div class="card">
-              <span class="font-subtitle-1">Próximo mês</span>
-              <%- include('./partials/transaction-table', {table: futureTable})
-              %>
-            </div>
-          </section>
-          <section id="bottom-right-section">
-            <div class="card">
-              <a href="/chart">
-                <canvas id="verticalBar"></canvas>
-              </a>
             </div>
           </section>
         </section>
@@ -52,6 +54,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    <script src="/javascripts/my_chart.js"></script>
+    <script src="/javascripts/home.js"></script>
   </body>
 </html>

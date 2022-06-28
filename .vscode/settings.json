@@ -15,5 +15,6 @@
   },
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
-  "html.format.templating": true
+  "html.format.templating": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

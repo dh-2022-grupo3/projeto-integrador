@@ -1,18 +1,31 @@
+<% if (table.transactions.length > 0) { %>
 <table class="transaction-table">
   <thead>
     <tr class="font-subtitle-2">
       <th scope="col">Data</th>
       <th scope="col">Descrição</th>
+      <th scope="col">Categoria</th>
       <th scope="col">Valor</th>
+      <th scope="col">Deletar</th>
     </tr>
   </thead>
   <tbody>
     <% table.transactions.forEach(transaction => { %>
     <tr>
-      <th scope="row"><%= transaction.dateParsed %></th>
-      <td><%= transaction.description %></td>
-      <td class="<%= transaction.value < 0 ? 'negative' : '' %>">
-        <%= transaction.valueParsed %>
+      <th scope="row"><%= transaction.dataParsed %></th>
+      <td><%= transaction.descricao %></td>
+      <td>
+        <%= categorias.find(c => c.id === transaction.id_categoria).nome %>
+      </td>
+      <td class="<%= transaction.valor < 0 ? 'negative' : '' %>">
+        <%= transaction.valor %>
+      </td>
+      <td>
+        <span
+          class="material-icons delete"
+          onclick="onDeleteClick(<%= transaction.id %>)"
+          >delete</span
+        >
       </td>
     </tr>
     <% }) %>
@@ -21,9 +34,13 @@
     <tr>
       <th scope="row" class="font-subtitle-2">Total</th>
       <td></td>
+      <td></td>
       <td class="<%= table.total < 0 ? 'negative' : '' %>">
         <%= table.totalParsed %>
       </td>
     </tr>
   </tfoot>
 </table>
+<% } else { %>
+<h5>Não existem dados para esse mês</h5>
+<% } %>

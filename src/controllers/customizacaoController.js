@@ -1,33 +1,28 @@
-const User = require("../javascripts/user");
 const { Usuario } = require("../database/models");
 
 const customizacaoController = {
   index: (req, res) => {
-    req.session.usuario;
-
     res.render("customizacao", {
       styles: ["customizacao"],
-      user,
+      usuario: req.session.usuario,
       title: "Customização",
+      name: req.session.usuario.nome,
     });
   },
 
   salvarCusotmizacao: async (req, res) => {
-    const { nome, sobrenome, escolaridade, fonte, renda, descricao } = req.body;
+    const { nome, sobrenome } = req.body;
 
-    await Customizacao.create({
-      nome,
-      sobrenome,
-      escolaridade,
-      fonte,
-      renda,
-      descricao,
-    });
+    await Usuario.update(
+      { nome, sobrenome },
+      { where: { id: req.session.usuario.id } }
+    );
+
+    req.session.usuario.nome = nome;
+    req.session.usuario.sobrenome = sobrenome;
 
     return res.redirect("/customizacao");
   },
 };
-
-const user = new User("1", "Nome Sobrenome", "nome@nome.nome", 5000);
 
 module.exports = customizacaoController;

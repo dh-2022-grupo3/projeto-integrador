@@ -10,39 +10,19 @@
         <section id="desktop">
           <form action="" method="post">
             <label for="nome">Nome:</label><br />
-            <input type="text" id="nome" name="nome" /><br />
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              value="<%= usuario.nome %>"
+            /><br />
             <label for="sobrenome">Sobrenome:</label><br />
-            <input type="text" id="sobrenome" name="sobrenome" />
-
-            <p>Fonte de Renda</p>
             <input
-              type="checkbox"
-              id="mesada"
-              name="fonte-renda"
-              value="mesada"
+              type="text"
+              id="sobrenome"
+              name="sobrenome"
+              value="<%= usuario.sobrenome %>"
             />
-            <label for="mesada">Mesada</label><br />
-            <input
-              type="checkbox"
-              id="freela"
-              name="fonte-renda"
-              value="freela"
-            />
-            <label for="freela">Freela</label><br />
-            <input
-              type="checkbox"
-              id="emprego"
-              name="fonte-renda"
-              value="emprego"
-            />
-            <label for="emprego">Emprego</label><br />
-            <input
-              type="checkbox"
-              id="outros"
-              name="fonte-renda"
-              value="outros"
-            />
-            <label for="outros">Outros</label>
 
             <br />
             <button type="submit">Atualizar</button>

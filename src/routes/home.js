@@ -6,5 +6,6 @@ const router = express.Router();
 
 router.get("/", auth, homeController.index);
 router.post("/", auth, homeController.salvarTransacao);
+router.delete("/", auth, homeController.deletarTransacao);
 
 module.exports = router;

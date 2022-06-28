@@ -12,3 +12,8 @@ table.transaction-table {
 .transaction-table .negative {
   color: red;
 }
+
+.delete {
+  color: red;
+  cursor: pointer;
+}
