@@ -2,25 +2,27 @@
 <table class="transaction-table">
   <thead>
     <tr class="font-subtitle-2">
-      <th scope="col">Data</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Categoria</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Deletar</th>
+      <th scope="col" class="date-column">Data</th>
+      <th scope="col" class="description-column">Descrição</th>
+      <th scope="col" class="category-column">Categoria</th>
+      <th scope="col" class="currency-column"></th>
+      <th scope="col" class="value-column">Valor</th>
+      <th scope="col" class="delete-column"></th>
     </tr>
   </thead>
   <tbody>
     <% table.transactions.forEach(transaction => { %>
     <tr>
-      <th scope="row"><%= transaction.dataParsed %></th>
-      <td><%= transaction.descricao %></td>
+      <th scope="row" class="date-column"><%= transaction.dataParsed %></th>
+      <td class="description-column"><%= transaction.descricao %></td>
       <td>
         <%= categorias.find(c => c.id === transaction.id_categoria).nome %>
       </td>
-      <td class="<%= transaction.valor < 0 ? 'negative' : '' %>">
+      <td class="currency-column">R$</td>
+      <td class="value-column <%= transaction.valor < 0 ? 'negative' : '' %>">
         <%= transaction.valor %>
       </td>
-      <td>
+      <td class="delete-column">
         <span
           class="material-icons delete"
           onclick="onDeleteClick(<%= transaction.id %>)"
@@ -32,11 +34,11 @@
   </tbody>
   <tfoot>
     <tr>
-      <th scope="row" class="font-subtitle-2">Total</th>
-      <td></td>
-      <td></td>
-      <td class="<%= table.total < 0 ? 'negative' : '' %>">
-        <%= table.totalParsed %>
+      <th scope="row" class="font-subtitle-2" colspan="1">Total</th>
+      <td colspan="2" class="currency-column"></td>
+      <td class="currency-column">R$</td>
+      <td class="value-column <%= table.total < 0 ? 'negative' : '' %>">
+        <%= table.total %>
       </td>
     </tr>
   </tfoot>

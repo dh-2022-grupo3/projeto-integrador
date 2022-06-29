@@ -1,12 +1,18 @@
 table.transaction-table {
-  border: 1px solid black;
   width: 100%;
 }
 
 .transaction-table td,
 .transaction-table th {
+  vertical-align: middle;
+  height: 0;
+
   border: 1px solid black;
   padding: 0 var(--spacing-half);
+}
+
+.transaction-table th {
+  box-sizing: content-box;
 }
 
 .transaction-table .negative {
@@ -16,4 +22,34 @@ table.transaction-table {
 .delete {
   color: red;
   cursor: pointer;
+}
+
+.transaction-table th.date-column,
+.transaction-table th.currency-column,
+.transaction-table th.delete-column {
+  width: 0px;
+}
+.transaction-table th.category-column,
+.transaction-table th.value-column {
+  width: 7rem;
+}
+
+.transaction-table .delete-column {
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+}
+
+.transaction-table .currency-column {
+  border-right: none;
+  padding-right: 0;
+}
+
+.transaction-table .value-column {
+  border-left: none;
+  padding-left: 0;
+}
+
+.transaction-table td.value-column {
+  text-align: end;
 }

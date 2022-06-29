@@ -43,12 +43,17 @@ charts[1] = new Chart(verticalBar, {
     ],
     datasets: [
       {
-        data: ejsData.rendimentosMes,
+        data: ejsData.saldoMes,
         backgroundColor: ejsData.paletteMonths,
       },
     ],
   },
   options: {
     responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
   },
 });

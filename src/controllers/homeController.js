@@ -48,16 +48,25 @@ const homeController = {
 
   salvarTransacao: async (req, res) => {
     const { value, description, date, categoria } = req.body;
-
+    const data = new Date(date);
+    data.setHours(data.getHours() + 3);
     await Movimentacao.create({
       descricao: description,
       valor: value,
-      data: date,
+      data: data,
       id_categoria: categoria,
       id_usuario: req.session.usuario.id,
     });
 
-    return res.send("Transacao cadastrada com sucesso");
+    const now = new Date();
+
+    if (req.query.ano == null) {
+      req.query.ano = now.getFullYear();
+    }
+    if (req.query.mes == null) {
+      req.query.mes = now.getMonth();
+    }
+    return res.redirect("/home");
   },
 
   deletarTransacao: async (req, res) => {
@@ -80,16 +89,14 @@ async function criarTabelaMovimentacao(id_usuario, ano, mes) {
       id_usuario,
       data: { [Op.between]: [inicioMes, fimMes] },
     },
+    order: [["data", "ASC"]],
     raw: true,
   });
 
   movimentacoes.forEach((movimentacao) => {
     movimentacao.dataParsed = new Date(movimentacao.data).toLocaleString(
       "pt-BR",
-      {
-        dateStyle: "short",
-        timeStyle: "short",
-      }
+      { dateStyle: "short" }
     );
   });
 

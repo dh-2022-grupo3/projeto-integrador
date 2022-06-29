@@ -22,7 +22,7 @@ const chartController = {
     categorias.forEach((cat) => {
       gastosCategoria[cat.id] = 0;
     });
-    const rendimentosMes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    const saldoMes = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     const movimentacoes = await Movimentacao.findAll({
       where: {
@@ -34,12 +34,13 @@ const chartController = {
     movimentacoes.forEach((mov) => {
       const valor = +mov.valor;
 
+      saldoMes[mov.data.getMonth()] += valor;
+
       if (mov.valor < 0) {
         gastos += valor;
         gastosCategoria[mov.id_categoria] -= valor;
       } else {
         receita += valor;
-        rendimentosMes[mov.data.getMonth()] += valor;
       }
     });
 
@@ -70,7 +71,7 @@ const chartController = {
       name: req.session.usuario.nome,
       categorias,
       gastosCategoria,
-      rendimentosMes,
+      saldoMes,
       paletteCat: iwanthue(categorias.length),
       paletteMonths: iwanthue(12),
     });
