@@ -26,11 +26,12 @@ const homeController = {
 
     const balanco = await Movimentacao.sum("valor", {
       where: {
+        id_usuario: req.session.usuario.id,
         data: { [Op.lte]: now },
       },
     });
 
-    req.session.usuario.balanco = balanco.toFixed(2);
+    req.session.usuario.balanco = balanco != null ? balanco.toFixed(2) : "0.00";
 
     res.render("home", {
       styles: ["home"],
