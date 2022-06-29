@@ -4,23 +4,21 @@ const ctx = document.getElementById("myChart")?.getContext("2d");
 const verticalBar = document.getElementById("verticalBar").getContext("2d");
 const charts = [];
 
-if (ctx != null) {
-  charts[0] = new Chart(ctx, {
-    type: "doughnut",
-    data: {
-      labels: ejsData.categorias.map((cat) => cat.nome),
-      datasets: [
-        {
-          data: ejsData.gastosCategoria,
-          backgroundColor: ejsData.paletteCat,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-    },
-  });
-}
+charts[0] = new Chart(ctx, {
+  type: "doughnut",
+  data: {
+    labels: ejsData.categorias.map((cat) => cat.nome),
+    datasets: [
+      {
+        data: ejsData.gastosCategoria,
+        backgroundColor: ejsData.paletteCat,
+      },
+    ],
+  },
+  options: {
+    responsive: true,
+  },
+});
 
 // Chart Bar
 
